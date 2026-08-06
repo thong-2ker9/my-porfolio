@@ -5,6 +5,7 @@ import { SlideSection } from './helpers'
 const ROT = {
   '-6': 'rotate-[-6deg]',
   '-3': 'rotate-[-3deg]',
+  2: 'rotate-[2deg]',
   4: 'rotate-[4deg]',
 }
 
@@ -170,14 +171,17 @@ export default function ScrapbookSlide({ slide }) {
               </p>
             </div>
 
-            {/* polaroid CLB Toán học (ảnh buổi ra mắt — math-1), hơi xoay nghiêng */}
-            <div className="relative z-10 mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-2.5 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
-              <div className="overflow-hidden">
-                <img src={aw.club.photo} alt="" loading="lazy" className="h-48 w-full object-cover" />
+            {/* 2 polaroid: card CLB Toán (math-1) + poster kết quả Rung Chuông Vàng (math-2) */}
+            <div className="relative z-10 mt-8 grid max-w-xl grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="rotate-[-2deg] bg-white p-2.5 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
+                <div className="overflow-hidden">
+                  <img src={aw.club.photo} alt="" loading="lazy" className="h-48 w-full object-cover" />
+                </div>
+                <p className="mt-2 text-right font-hand text-base text-neutral-600">
+                  {aw.club.date}
+                </p>
               </div>
-              <p className="mt-2 text-right font-hand text-base text-neutral-600">
-                {aw.club.date}
-              </p>
+              <Polaroid src={aw.poster} rotate={2} imgClass="aspect-[4/3]" />
             </div>
 
             {/* vợt tennis — góc trái dưới khối, nền sau, click-through */}
