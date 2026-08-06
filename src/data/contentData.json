@@ -447,8 +447,8 @@
       "games": [
         { "name": "Valorant", "logo": "/media/games/valorant.png", "tint": "#ff4655", "mono": true },
         { "name": "Free Fire", "logo": "/media/games/free-fire.png", "tint": "#ff7a1a", "mono": true },
-        { "name": "Liên Quân Mobile", "logo": "/media/games/lien-quan.png", "tint": "#ff4d4d" },
-        { "name": "ZingSpeed", "logo": null, "tint": "#ff8c1a" },
+        { "name": "Liên Quân Mobile", "logo": "/media/games/lien-quan.png", "tint": "#ff4d4d", "mono": true },
+        { "name": "ZingSpeed", "logo": "/media/games/zingspeed.png", "tint": "#ff8c1a" },
         { "name": "Minecraft", "logo": "/media/games/minecraft.png", "tint": "#6bb23c" },
         { "name": "Roblox", "logo": "/media/games/roblox.png", "tint": "#e2231a" }
       ],
