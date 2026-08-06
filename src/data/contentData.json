@@ -282,9 +282,21 @@
           "Kinh nghiệm từng tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
         ],
         "photos": [
-          { "src": "/images/science-3.jpg", "rotate": -4 },
-          { "src": "/images/science-2.jpg", "rotate": 3 },
-          { "src": "/images/science-1.jpg", "rotate": -3 }
+          {
+            "src": "/images/science-3.jpg",
+            "rotate": -4,
+            "pos": { "left": "1%", "top": "14%", "width": "41%", "z": 10 }
+          },
+          {
+            "src": "/images/science-2.jpg",
+            "rotate": 3,
+            "pos": { "left": "27%", "top": "0%", "width": "44%", "z": 30 }
+          },
+          {
+            "src": "/images/science-1.jpg",
+            "rotate": -3,
+            "pos": { "right": "2%", "bottom": "3%", "width": "32%", "z": 20 }
+          }
         ]
       },
       "math": {
