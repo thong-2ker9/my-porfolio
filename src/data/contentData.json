@@ -273,7 +273,7 @@
         "title": "Khoa học Kỹ thuật",
         "subtitle": "Đưa ý tưởng thử nghiệm thành sản phẩm thực tế",
         "body": [
-          "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường. Tuy chỉ là tham gia cho vuii chứ chả có giải nhưng mà cũng lại là tự hào một xíu, cũng vừa vui vừa buồn vì kĩ năng thuyết trình và lập luận còn hơi yếu kém 1 xíu.",
+          "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường. Tuy chỉ là tham gia cho vui chứ chả có giải nhưng mà cũng lại là tự hào một xíu, cũng vừa vui vừa buồn vì kĩ năng thuyết trình và lập luận còn hơi yếu kém 1 xíu.",
           "Đây không chỉ là một thành tích, mà còn là một trong những trải nghiệm khiến Anh Thông nhận ra rằng những ý tưởng ban đầu tưởng như chỉ là thử nghiệm cá nhân hoàn toàn có thể được phát triển thành một sản phẩm thực tế."
         ],
         "highlights": [
@@ -283,19 +283,19 @@
         ],
         "photos": [
           {
-            "src": "/images/science-3.jpg",
-            "rotate": -4,
-            "pos": { "left": "1%", "top": "14%", "width": "41%", "z": 10 }
-          },
-          {
             "src": "/images/science-2.jpg",
-            "rotate": 3,
-            "pos": { "left": "27%", "top": "0%", "width": "44%", "z": 30 }
+            "rotate": -6,
+            "pos": { "left": "0%", "top": "14%", "width": "46%", "z": 1 }
           },
           {
             "src": "/images/science-1.jpg",
+            "rotate": 4,
+            "pos": { "left": "32%", "top": "0%", "width": "38%", "z": 2 }
+          },
+          {
+            "src": "/images/science-3.jpg",
             "rotate": -3,
-            "pos": { "right": "2%", "bottom": "3%", "width": "32%", "z": 20 }
+            "pos": { "right": "0%", "top": "34%", "width": "42%", "z": 3 }
           }
         ]
       },
@@ -304,16 +304,16 @@
         "subtitle": "Cấu trúc và logic phía sau mọi vấn đề",
         "body": [
           "Như bao người khác Anh Thông cũng chả thích thú gì môn toán, có những lúc muốn lên mạng tra cứu để hoàn thành bài tập về nhà hoặc là 1 dự án hay bài toán khó nào đó cho xong.",
-          "Tuy nhiên, toán lại là môn học anh yêu thích và cũng là một trong những lĩnh vực phù hợp với tôi (vì ngoài toán ra tôi thấy môn nào mình cũng dở) :) Giờ không bám vào 1 môn duy nhất thì làm giiiii ) — suy nghĩ: tìm vấn đề, phân tích, thử cách giải và tìm ra cấu trúc phía sau một bài toán. Ps: Nhiều lúc ước gì mình là học sinh chuyên Tuyên Quang ghê =)))"
+          "Tuy nhiên, toán lại là môn học anh yêu thích và cũng là một trong những lĩnh vực phù hợp với tôi (vì ngoài toán ra tôi thấy môn nào mình cũng dở :) Giờ không bám vào 1 môn duy nhất thì làm giiii ) — suy nghĩ: tìm vấn đề, phân tích, thử cách giải và tìm ra cấu trúc phía sau một bài toán. Ps: Nhiều lúc ước gì mình là học sinh chuyên Tuyên Quang ghê =)))"
         ],
         "highlights": [
-          "Về Thành tích: Chắc được cái giải Á quân Rung Chuông Vàng Toán tại trường với mấy cuộc thi olympic toán lúc nhỏ :)) còn lại thì chả có gì nổi bật :)) trình độ toán như người bình thường",
+          "Về Thành tích: Chắc được cái giải Á quân Rung Chuông Vàng Toán tại trường với mấy cuộc thi olympic toán lúc nhỏ :) còn lại thì chả có gì nổi bật :) trình độ toán như người bình thường",
           "Tư duy Toán học: Tập trung vào phân tích, thử nghiệm và tìm ra cấu trúc cốt lõi của vấn đề."
         ]
       },
       "awards": {
         "badge": "Á quân",
-        "badgeNote": "Rùa =))))) kết hợp với may mắn và những lần sai cực ngiiuuuuuu",
+        "badgeNote": "Rùa =))))) kết hợp với may mắn và những lần sai cực ngiiuuuuu",
         "winnersTitle": "Kết quả Rung Chuông Vàng Toán",
         "champion": [{ "name": "Nguyễn Thế Duy", "klass": "Lớp 10.3" }],
         "runnerUp": [

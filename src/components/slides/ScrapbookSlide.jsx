@@ -3,33 +3,32 @@ import { SlideSection } from './helpers'
 
 /* Tailwind literal classes so arbitrary rotate values are generated */
 const ROT = {
-  '-4': 'rotate-[-4deg]',
+  '-6': 'rotate-[-6deg]',
   '-3': 'rotate-[-3deg]',
-  3: 'rotate-[3deg]',
+  4: 'rotate-[4deg]',
 }
 
-/* ── Polaroid: white frame only — no captions, no notes ── */
-function Polaroid({ src, rotate = 0, className = '', imgClass = '', children }) {
+/* ── Polaroid: white frame, thick bottom strip (classic polaroid) ── */
+function Polaroid({ src, rotate = 0, className = '', imgClass = '' }) {
   return (
     <div
       className={`transition-transform duration-300 ease-out hover:rotate-0 hover:scale-105 ${ROT[rotate] ?? ''} ${className}`}
     >
-      <figure className="bg-white p-2 shadow-[0_14px_30px_rgba(0,0,0,0.5)]">
-        <div className="relative overflow-hidden bg-neutral-200">
+      <figure className="rounded-[4px] bg-white p-2.5 pb-9 shadow-[0_8px_20px_rgba(0,0,0,0.4)]">
+        <div className="overflow-hidden bg-neutral-200">
           <img
             src={src}
             alt=""
             loading="lazy"
             className={`h-full w-full object-cover ${imgClass}`}
           />
-          {children}
         </div>
       </figure>
     </div>
   )
 }
 
-/* ── Bullet icon: blue-bordered circle with a small dot inside (demo style) ── */
+/* ── Bullet icon: blue-bordered circle with a small dot inside ── */
 function BulletDot({ text }) {
   return (
     <li className="flex items-start gap-3 text-left text-sm leading-relaxed text-body/90">
@@ -41,22 +40,7 @@ function BulletDot({ text }) {
   )
 }
 
-/* ── Line-art safety goggles doodle ── */
-function GogglesDoodle({ className = '' }) {
-  return (
-    <svg viewBox="0 0 120 64" fill="none" className={className} aria-hidden="true">
-      <path d="M8 34 C6 16 22 8 38 14 L40 15" stroke="#60A5FA" strokeWidth="4" strokeLinecap="round" />
-      <path d="M112 34 C114 16 98 8 82 14 L80 15" stroke="#60A5FA" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="38" cy="34" r="21" stroke="#60A5FA" strokeWidth="4" />
-      <circle cx="82" cy="34" r="21" stroke="#60A5FA" strokeWidth="4" />
-      <path d="M59 34 L61 34" stroke="#60A5FA" strokeWidth="4" strokeLinecap="round" />
-      <path d="M30 27 C33 23 43 23 46 27" stroke="#60A5FA" strokeWidth="3" strokeLinecap="round" />
-      <path d="M74 27 C77 23 87 23 90 27" stroke="#60A5FA" strokeWidth="3" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-/* ── Tennis racket doodle ── */
+/* ── Tennis racket doodle (demo corner decoration) ── */
 function RacketDoodle({ className = '' }) {
   return (
     <svg viewBox="0 0 72 110" fill="none" className={className} aria-hidden="true">
@@ -88,30 +72,37 @@ export default function ScrapbookSlide({ slide }) {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-28 sm:px-10">
-        <div className="grid gap-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:gap-x-16 lg:gap-y-24">
-          {/* ══ KHOA HỌC KỸ THUẬT (top-left) ══ */}
-          <div data-reveal className="relative order-1">
-            <GogglesDoodle className="pointer-events-none absolute -left-3 -top-9 w-20 rotate-[-12deg] opacity-80 sm:w-24" />
+        {/* ══════════ KHỐI A — Khoa học Kỹ thuật (2 cột: text | ảnh) ══════════ */}
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-x-16">
+          {/* Cột trái — text */}
+          <div data-reveal className="relative">
+            {/* tag 05 + sticker-2 (kính bảo hộ) */}
+            <div className="relative z-10 flex flex-wrap items-center gap-3">
+              <img
+                src="/images/sticker-2.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none w-10 -rotate-6"
+              />
+              <p className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-[#13243d] px-3.5 py-1.5 font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-cyber sm:text-xs">
+                <span className="rounded-full bg-accent/80 px-1.5 py-0.5 text-[9px] font-bold text-white">
+                  {slide.num}
+                </span>
+                <span className="text-white/40">—</span>
+                {s.subtitle}
+              </p>
+            </div>
 
-            <p className="relative z-10 inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-[#13243d] px-3.5 py-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
-              <span className="rounded-full bg-accent/80 px-1.5 py-0.5 text-[9px] font-bold text-white">
-                {slide.num}
-              </span>
-              <span className="text-white/40">—</span>
-              {s.subtitle}
-            </p>
-
-            <h2 className="giant-text relative z-10 mt-4 text-balance text-4xl sm:text-5xl">
-              {s.title}
-            </h2>
-
-            {/* glowing blue brain (user's sticker-3) — beside heading, behind text */}
-            <img
-              src="/images/sticker-3.png"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-2 top-16 z-0 w-16 rotate-[8deg] drop-shadow-[0_0_18px_rgba(37,150,255,0.55)] sm:-right-6 sm:w-24"
-            />
+            {/* tiêu đề + sticker-3 (não) sát bên phải chữ */}
+            <div className="relative z-10 mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <h2 className="giant-text text-balance text-4xl sm:text-5xl">{s.title}</h2>
+              <img
+                src="/images/sticker-3.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none w-14 rotate-[8deg] drop-shadow-[0_0_18px_rgba(37,150,255,0.55)] sm:w-[68px]"
+              />
+            </div>
 
             <div className="relative z-10 mt-6 flex max-w-xl flex-col gap-4">
               {s.body.map((p, i) => (
@@ -128,16 +119,16 @@ export default function ScrapbookSlide({ slide }) {
             </ul>
           </div>
 
-          {/* ══ 3 POLAROIDS (top-right) — contained collage: % positions, fan spread ══ */}
-          <div data-reveal className="relative order-2 mx-auto w-full max-w-md lg:mt-4">
-            {/* user's cartoon sticker — floats above the cluster */}
+          {/* Cột phải — cụm 3 polaroid quạt xòe (position theo % trong container riêng) */}
+          <div data-reveal className="relative mx-auto w-full max-w-[460px] lg:mt-2">
+            {/* sticker-1 (chấm bi màu) — góc trên phải Khối A, ngoài cụm ảnh */}
             <img
               src="/images/sticker-1.png"
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute -top-12 right-0 z-0 w-16 rotate-[10deg] drop-shadow-lg sm:w-20"
+              className="pointer-events-none absolute -top-14 right-2 z-0 w-16 rotate-[10deg] sm:w-20"
             />
-            <div className="relative h-[392px] w-full sm:h-[440px]">
+            <div className="relative h-[370px] w-full">
               {s.photos.map((ph, i) => (
                 <div
                   key={ph.src}
@@ -154,27 +145,23 @@ export default function ScrapbookSlide({ slide }) {
                   <Polaroid
                     src={ph.src}
                     rotate={ph.rotate}
-                    imgClass={i === 2 ? 'aspect-[3/4] object-cover object-top' : 'aspect-[4/3]'}
-                  >
-                    {/* red handwritten "love" scribble on the middle (group) photo */}
-                    {i === 1 && (
-                      <span className="absolute bottom-2 right-2 -rotate-12 font-hand text-2xl font-bold text-red-600/90">
-                        love ❤️
-                      </span>
-                    )}
-                  </Polaroid>
+                    imgClass={i === 1 ? 'aspect-[3/4] object-cover object-top' : 'aspect-[4/3]'}
+                  />
                 </div>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* ══ Á QUÂN + CLB TOÁN (bottom-left) — demo arrangement ══ */}
-          <div data-reveal className="relative order-3">
-            {/* purple Á-quân badge + handwritten note */}
+        {/* ══════════ KHỐI B — Á quân + Về Toán học (2 cột: 45% | 55%) ══════════ */}
+        <div className="mt-24 grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-x-16">
+          {/* Cột trái — badge Á quân + card kết quả + polaroid CLB Toán */}
+          <div data-reveal className="relative">
+            {/* badge tròn Á quân (tím, ~96px) + chữ viết tay */}
             <div className="flex items-start gap-4">
-              <div className="flex h-28 w-28 shrink-0 -rotate-6 flex-col items-center justify-center gap-1 rounded-full bg-gradient-to-br from-violet-500 to-purple-700 text-center shadow-[0_10px_30px_rgba(139,92,246,0.35)] ring-4 ring-white/10">
-                <Trophy size={22} className="text-white" />
-                <p className="font-display text-lg font-bold leading-none text-white">
+              <div className="flex h-24 w-24 shrink-0 -rotate-6 flex-col items-center justify-center gap-1 rounded-full bg-gradient-to-br from-violet-500 to-purple-700 text-center shadow-[0_10px_30px_rgba(139,92,246,0.35)] ring-4 ring-white/10">
+                <Trophy size={20} className="text-white" />
+                <p className="font-display text-base font-bold leading-none text-white">
                   {aw.badge}
                 </p>
               </div>
@@ -183,8 +170,8 @@ export default function ScrapbookSlide({ slide }) {
               </p>
             </div>
 
-            {/* dark winners card — text only */}
-            <div className="relative z-10 mt-6 max-w-xl rounded-2xl border border-white/10 bg-[#15151b] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
+            {/* card KẾT QUẢ RUNG CHUÔNG VÀNG TOÁN */}
+            <div className="relative z-10 mt-6 max-w-xl rounded-[12px] border border-white/10 bg-[#15151b] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
               <p className="flex items-center gap-2 font-display text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
                 🏆 {aw.winnersTitle}
               </p>
@@ -196,7 +183,7 @@ export default function ScrapbookSlide({ slide }) {
                   <ul className="mt-2 space-y-1.5">
                     {aw.champion.map((p) => (
                       <li key={p.name} className="text-left text-sm text-body/90">
-                        🥇 <span className="font-medium text-white">{p.name}</span>{' '}
+                        🏆 <span className="font-medium text-white">{p.name}</span>{' '}
                         <span className="text-body/50">· {p.klass}</span>
                       </li>
                     ))}
@@ -222,7 +209,7 @@ export default function ScrapbookSlide({ slide }) {
               <p className="mt-2 text-left text-xs leading-relaxed text-body/60">📁 {aw.clubNote}</p>
             </div>
 
-            {/* white club card — school header, red title, club photo (math-1), date */}
+            {/* polaroid CLB Toán học (ảnh buổi ra mắt — math-1), hơi xoay nghiêng */}
             <div className="relative z-10 mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-3 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
               <p className="text-center text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-800">
                 {aw.club.school}
@@ -241,38 +228,34 @@ export default function ScrapbookSlide({ slide }) {
               </p>
             </div>
 
-            {/* tennis racket doodle — bottom-left corner, behind content */}
+            {/* vợt tennis — góc trái dưới khối, nền sau, click-through */}
             <RacketDoodle className="pointer-events-none absolute -bottom-12 left-1 z-0 w-16 rotate-[24deg] opacity-60" />
           </div>
 
-          {/* ══ VỀ TOÁN HỌC (bottom-right) — left-aligned, doodles pushed to corner ══ */}
-          <div data-reveal className="relative order-4 lg:mt-10">
-            {/* ruler + pencil doodles (yellow) — top-right corner, behind text, click-through */}
-            <div className="pointer-events-none absolute -top-14 right-0 z-0 hidden items-center gap-2 sm:flex">
-              <Ruler
-                size={40}
-                className="-rotate-45 text-amber-400/80"
-                strokeWidth={2.2}
-              />
-              <Pencil size={36} className="rotate-[18deg] text-amber-300/80" strokeWidth={2.2} />
-            </div>
-            {/* user's sketch sticker near the doodles */}
-            <img
-              src="/images/sticker-2.png"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -top-16 right-24 z-0 hidden w-24 -rotate-6 opacity-90 sm:block"
-            />
-
-            <p className="relative z-10 flex items-center gap-3 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
-              <span className="h-px w-8 bg-accent/60" />
-              {m.subtitle}
-              <span className="h-px w-8 bg-accent/60" />
+          {/* Cột phải — Về Toán học (tag + icon cuối dòng, KHÔNG đè chữ) */}
+          <div data-reveal className="relative lg:mt-2">
+            {/* tag CẤU TRÚC VÀ LOGIC... + [kính][thước][bút chì] canh phải, cách chữ ≥12px */}
+            <p className="relative z-10 flex items-center justify-between gap-3 font-display text-[10px] font-semibold uppercase tracking-[0.18em] text-cyber sm:text-xs sm:tracking-[0.22em]">
+              <span className="flex min-w-0 items-center gap-2 sm:gap-3">
+                <span className="h-px w-6 shrink-0 bg-accent/60 sm:w-8" />
+                <span>{m.subtitle}</span>
+                <span className="h-px w-6 shrink-0 bg-accent/60 sm:w-8" />
+              </span>
+              <span className="flex shrink-0 items-center gap-2">
+                <img
+                  src="/images/sticker-2.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="pointer-events-none w-6 -rotate-6 sm:w-8"
+                />
+                <Ruler size={22} className="pointer-events-none w-[18px] -rotate-45 text-amber-400/80 sm:w-[22px]" strokeWidth={2.2} />
+                <Pencil size={20} className="pointer-events-none w-4 rotate-[18deg] text-amber-300/80 sm:w-5" strokeWidth={2.2} />
+              </span>
             </p>
 
+            {/* tiêu đề Về Toán học + icon biểu đồ nhỏ bên cạnh */}
             <div className="relative z-10 mt-4 flex items-center gap-4">
               <h2 className="giant-text text-balance text-4xl sm:text-5xl">{m.title}</h2>
-              {/* blue bar-graph beside the heading */}
               <BarChart3 size={34} strokeWidth={2.2} className="ml-auto shrink-0 text-cyber/80" />
             </div>
 
@@ -292,7 +275,7 @@ export default function ScrapbookSlide({ slide }) {
           </div>
         </div>
 
-        {/* ── corner decorations (click-through, never above content) ── */}
+        {/* ── góc trang trí (click-through, sau nội dung) ── */}
         <Search
           size={110}
           strokeWidth={1.2}
