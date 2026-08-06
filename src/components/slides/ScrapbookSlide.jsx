@@ -171,18 +171,9 @@ export default function ScrapbookSlide({ slide }) {
             </div>
 
             {/* polaroid CLB Toán học (ảnh buổi ra mắt — math-1), hơi xoay nghiêng */}
-            <div className="relative z-10 mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-3 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
-              <p className="text-center text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-800">
-                {aw.club.school}
-              </p>
-              <p className="text-center text-[9px] font-semibold uppercase tracking-[0.3em] text-neutral-500">
-                {aw.club.dept}
-              </p>
-              <p className="mt-1.5 text-center font-display text-sm font-extrabold uppercase tracking-wide text-red-600">
-                {aw.club.title}
-              </p>
-              <div className="mt-2 overflow-hidden">
-                <img src={aw.club.photo} alt="" loading="lazy" className="h-44 w-full object-cover" />
+            <div className="relative z-10 mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-2.5 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
+              <div className="overflow-hidden">
+                <img src={aw.club.photo} alt="" loading="lazy" className="h-48 w-full object-cover" />
               </div>
               <p className="mt-2 text-right font-hand text-base text-neutral-600">
                 {aw.club.date}
