@@ -166,57 +166,56 @@ export default function HeroSlide({ slide, meta }) {
         </div>
 
         {/* right — narrow photo card (~1/5 slide) with colorful layers behind */}
-        <div
-          ref={cardRef}
-          className="flex w-full items-center justify-center lg:justify-end"
-          style={{ perspective: '1200px' }}
-        >
-          <div
-            ref={tiltRef}
-            onMouseMove={handleMove}
-            onMouseLeave={handleLeave}
-            className="relative w-[min(100%,300px)] lg:w-[clamp(260px,20vw,340px)]"
-          >
-            {/* colorful layers behind — faded, blurred, spread to all sides */}
-            <div aria-hidden="true" className="absolute -inset-4 sm:-inset-6">
-              <div className="absolute inset-0 -translate-x-5 -translate-y-5 rotate-[-8deg] rounded-2xl border border-white/5 bg-gradient-to-br from-sky-400 to-blue-600 opacity-55 blur-[2px]" />
-              <div className="absolute inset-0 translate-x-5 -translate-y-3 rotate-[9deg] rounded-2xl border border-white/5 bg-gradient-to-br from-pink-500 to-rose-600 opacity-55 blur-[2px]" />
-              <div className="absolute inset-0 -translate-x-4 translate-y-5 rotate-[3deg] rounded-2xl border border-white/5 bg-gradient-to-br from-amber-400 to-orange-600 opacity-55 blur-[2px]" />
-              <div className="absolute inset-0 translate-x-4 translate-y-4 rotate-[-5deg] rounded-2xl border border-white/5 bg-gradient-to-br from-violet-500 to-purple-700 opacity-55 blur-[2px]" />
-              <div className="absolute inset-0 -translate-y-6 rotate-[-2deg] rounded-2xl border border-white/5 bg-gradient-to-br from-emerald-400 to-teal-500 opacity-55 blur-[2px]" />
-              <div className="absolute inset-0 translate-y-6 rotate-[5deg] rounded-2xl border border-white/5 bg-gradient-to-br from-cyan-400 to-sky-600 opacity-55 blur-[2px]" />
-            </div>
+        <div ref={cardRef} className="flex w-full items-center justify-center lg:justify-end">
+          {/* shifted left ~9% so the frame breathes toward the center */}
+          <div className="lg:-translate-x-[9%]" style={{ perspective: '1200px' }}>
+            <div
+              ref={tiltRef}
+              onMouseMove={handleMove}
+              onMouseLeave={handleLeave}
+              className="relative w-[min(100%,312px)] lg:w-[clamp(270px,20.8vw,354px)]"
+            >
+              {/* colorful layers behind — faded, blurred, spread to all sides */}
+              <div aria-hidden="true" className="absolute -inset-4 sm:-inset-6">
+                <div className="absolute inset-0 -translate-x-5 -translate-y-5 rotate-[-8deg] rounded-2xl border border-white/5 bg-gradient-to-br from-sky-400 to-blue-600 opacity-40 blur-[4px]" />
+                <div className="absolute inset-0 translate-x-5 -translate-y-3 rotate-[9deg] rounded-2xl border border-white/5 bg-gradient-to-br from-pink-500 to-rose-600 opacity-40 blur-[4px]" />
+                <div className="absolute inset-0 -translate-x-4 translate-y-5 rotate-[3deg] rounded-2xl border border-white/5 bg-gradient-to-br from-amber-400 to-orange-600 opacity-40 blur-[4px]" />
+                <div className="absolute inset-0 translate-x-4 translate-y-4 rotate-[-5deg] rounded-2xl border border-white/5 bg-gradient-to-br from-violet-500 to-purple-700 opacity-40 blur-[4px]" />
+                <div className="absolute inset-0 -translate-y-6 rotate-[-2deg] rounded-2xl border border-white/5 bg-gradient-to-br from-emerald-400 to-teal-500 opacity-40 blur-[4px]" />
+                <div className="absolute inset-0 translate-y-6 rotate-[5deg] rounded-2xl border border-white/5 bg-gradient-to-br from-cyan-400 to-sky-600 opacity-40 blur-[4px]" />
+              </div>
 
-            {/* the portrait — poster-style card */}
-            <div className="group relative aspect-[2/3] w-full overflow-hidden rounded-bento border border-white/10 bg-surface shadow-card">
-              <img
-                src={HERO_IMG}
-                alt="Văn Anh Thông — ảnh chính"
-                loading="eager"
-                className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              />
+              {/* the portrait — poster-style card */}
+              <div className="group relative aspect-[2/3] w-full overflow-hidden rounded-bento border border-white/10 bg-surface shadow-card">
+                <img
+                  src={HERO_IMG}
+                  alt="Văn Anh Thông — ảnh chính"
+                  loading="eager"
+                  className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
 
-              {/* legibility gradient over the bright beach photo */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/5" />
+                {/* legibility gradient over the bright beach photo */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/5" />
 
-              {/* cursor-following shine */}
-              <div
-                ref={shineRef}
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              />
+                {/* cursor-following shine */}
+                <div
+                  ref={shineRef}
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
 
-              {/* caption */}
-              <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2">
-                <div className="min-w-0">
-                  <p className="font-display text-base font-bold leading-tight text-white">
-                    {meta.displayName}
-                  </p>
-                  <p className="truncate text-[11px] text-white/75" title={meta.role}>{meta.role}</p>
+                {/* caption */}
+                <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="font-display text-base font-bold leading-tight text-white">
+                      {meta.displayName}
+                    </p>
+                    <p className="truncate text-[11px] text-white/75" title={meta.role}>{meta.role}</p>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-white/20 bg-black/35 px-2.5 py-1 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-white/85 backdrop-blur-md">
+                    ✦ Ben · {meta.birthYear}
+                  </span>
                 </div>
-                <span className="shrink-0 rounded-full border border-white/20 bg-black/35 px-2.5 py-1 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-white/85 backdrop-blur-md">
-                  ✦ Ben · {meta.birthYear}
-                </span>
               </div>
             </div>
           </div>
