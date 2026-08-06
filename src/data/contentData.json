@@ -283,9 +283,9 @@
           "Kinh nghiệm từng tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
         ],
         "photos": [
-          { "src": "/images/science-3.jpg", "caption": "Giấy khen cấp trường ✨", "rotate": -7 },
-          { "src": "/images/science-2.jpg", "caption": "Hội đồng thi cấp thành phố", "rotate": 4 },
-          { "src": "/images/science-1.jpg", "caption": "Huy chương =))", "rotate": -3 }
+          { "src": "/images/science-3.jpg", "rotate": 2 },
+          { "src": "/images/science-2.jpg", "rotate": -2 },
+          { "src": "/images/science-1.jpg", "rotate": -3 }
         ]
       },
       "math": {
@@ -303,24 +303,10 @@
       "awards": {
         "badge": "Á quân",
         "badgeNote": "Rùa =))))) kết hợp với may mắn và những lần sai cực ngiiuuuuuu",
-        "winnersTitle": "Kết quả Rung Chuông Vàng Toán",
-        "champion": [{ "name": "Nguyễn Thế Duy", "klass": "Lớp 10.3" }],
-        "runnerUp": [
-          { "name": "Trương Minh Trí", "klass": "Lớp 10.3" },
-          { "name": "Nguyễn Trần Duy Khánh", "klass": "Lớp 11.1" },
-          { "name": "Nguyễn Trần Duy Tân", "klass": "Lớp 11.8" },
-          { "name": "Văn Anh Thông", "klass": "Lớp 11.8" }
-        ],
-        "congrats": "Xin chúc mừng thành tích ấn tượng của các bạn. Cảm ơn sự đồng hành của quý thầy cô, Ban chủ nhiệm cùng toàn thể thành viên đã góp phần tạo nên buổi sinh hoạt thật ý nghĩa.",
-        "clubNote": "CLB Toán học hứa hẹn sẽ tiếp tục mang đến những hoạt động thú vị và bổ ích cho tất cả các bạn yêu thích Toán học.",
-        "club": {
-          "school": "TRƯỜNG THPT NGUYỄN THỊ MINH KHAI – BÌNH DƯƠNG",
-          "dept": "TỔ TOÁN",
-          "title": "BUỔI RA MẮT CÂU LẠC BỘ TOÁN HỌC",
-          "photo": "/images/math-2.jpg",
-          "date": "Bình Dương, ngày 01 năm 2025"
-        },
-        "photo": { "src": "/images/math-1.jpg", "caption": "Kết quả giải thưởng CLB Toán 🏆", "rotate": 5 }
+        "photos": [
+          { "src": "/images/math-2.jpg", "rotate": -2 },
+          { "src": "/images/math-1.jpg", "rotate": 3 }
+        ]
       }
     },
 
