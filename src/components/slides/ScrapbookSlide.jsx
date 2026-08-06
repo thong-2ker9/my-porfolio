@@ -121,15 +121,15 @@ export default function ScrapbookSlide({ slide }) {
           </div>
 
           {/* Cột phải — cụm 3 polaroid quạt xòe (position theo % trong container riêng) */}
-          <div data-reveal className="relative mx-auto w-full max-w-[460px] lg:mt-2">
+          <div data-reveal className="relative mx-auto w-full max-w-[560px] lg:mt-2">
             {/* sticker-1 (chấm bi màu) — góc trên phải Khối A, ngoài cụm ảnh */}
             <img
               src="/images/sticker-1.png"
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute -top-14 right-2 z-0 w-16 rotate-[10deg] sm:w-20"
+              className="pointer-events-none absolute -top-20 right-2 z-0 w-16 rotate-[10deg] sm:w-20"
             />
-            <div className="relative h-[370px] w-full">
+            <div className="relative h-[460px] w-full">
               {s.photos.map((ph, i) => (
                 <div
                   key={ph.src}
