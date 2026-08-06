@@ -265,64 +265,68 @@
     },
 
     {
-      "id": "science",
+      "id": "science-math",
       "num": "05",
-      "navLabel": "Khoa học Kỹ thuật",
-      "layout": "split",
-      "primaryTitle": "Khoa học Kỹ thuật",
-      "secondaryTitle": "Đưa ý tưởng thử nghiệm thành sản phẩm thực tế",
-      "body": [
-        "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường.",
-        "Đây không chỉ là một thành tích, mà còn là một trong những trải nghiệm khiến Anh Thông nhận ra rằng những ý tưởng ban đầu tưởng như chỉ là thử nghiệm cá nhân hoàn toàn có thể được phát triển thành một sản phẩm thực tế."
-      ],
-      "highlights": [
-        "Dự án tiêu biểu: Ứng dụng hỗ trợ học tập và đời sống học đường.",
-        "Thành tích: Giải Nhất Cuộc thi Khoa học Kỹ thuật cấp trường.",
-        "Kinh nghiệm tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
-      ],
-      "badge": "🥇 Giải Nhất",
-      "badgeSub": "Cuộc thi Khoa học Kỹ thuật cấp trường",
-      "images": [
-        {
-          "src": "/images/photo-09.jpg",
-          "role": "split-media",
-          "alt": "Giải thưởng Khoa học Kỹ thuật",
-          "caption": "Ý tưởng thử nghiệm → sản phẩm thực tế"
-        }
-      ]
-    },
-
-    {
-      "id": "math",
-      "num": "06",
-      "navLabel": "Toán học",
-      "layout": "split",
-      "flip": true,
-      "primaryTitle": "Đam mê Toán học",
-      "secondaryTitle": "Cấu trúc và logic phía sau mọi vấn đề",
-      "body": [
-        "Anh Thông cũng từng tham gia Rung Chuông Vàng Toán học tại trường.",
-        "Toán là môn học anh yêu thích nhất và cũng là một trong những lĩnh vực phù hợp với cách anh thích suy nghĩ: tìm vấn đề, phân tích, thử cách giải và tìm ra cấu trúc phía sau một bài toán."
-      ],
-      "highlights": [
-        "Thành tích: Á quân Rung Chuông Vàng Toán học tại trường.",
-        "Tư duy Toán học: Tập trung vào phân tích, thử nghiệm và tìm ra cấu trúc cốt lõi của vấn đề."
-      ],
-      "badge": "🥈 Á quân",
-      "badgeSub": "Rung Chuông Vàng Toán học tại trường",
-      "images": [
-        {
-          "src": "/images/photo-10.jpg",
-          "role": "split-media",
-          "alt": "Giải thưởng Toán học",
-          "caption": "Tìm cấu trúc phía sau một bài toán"
-        }
-      ]
+      "navLabel": "KHKT & Toán",
+      "layout": "scrapbook",
+      "science": {
+        "title": "Khoa học Kỹ thuật",
+        "subtitle": "Đưa ý tưởng thử nghiệm thành sản phẩm thực tế",
+        "body": [
+          "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường.",
+          "Tuy chỉ là tham gia cho vuii chứ chả có giải nhưng mà cũng lại là tự hào một xíu, cũng vừa vui vừa buồn vì kĩ năng thuyết trình và lập luận còn hơi yếu kém 1 xíu.",
+          "Đây không chỉ là một thành tích, mà còn là một trong những trải nghiệm khiến Anh Thông nhận ra rằng những ý tưởng ban đầu tưởng như chỉ là thử nghiệm cá nhân hoàn toàn có thể được phát triển thành một sản phẩm thực tế."
+        ],
+        "highlights": [
+          "Dự án tiêu biểu: Ứng dụng hỗ trợ học tập và đời sống học đường.",
+          "Thành tích: Giải Nhất Cuộc thi Khoa học Kỹ thuật cấp trường.",
+          "Kinh nghiệm từng tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
+        ],
+        "photos": [
+          { "src": "/images/science-3.jpg", "caption": "Giấy khen cấp trường ✨", "rotate": -7 },
+          { "src": "/images/science-2.jpg", "caption": "Hội đồng thi cấp thành phố", "rotate": 4 },
+          { "src": "/images/science-1.jpg", "caption": "Huy chương =))", "rotate": -3 }
+        ]
+      },
+      "math": {
+        "title": "Về Toán học",
+        "subtitle": "Cấu trúc và logic phía sau mọi vấn đề",
+        "body": [
+          "Như bao người khác Anh Thông cũng chả thích thú gì môn toán, có những lúc muốn lên mạng tra cứu để hoàn thành bài tập về nhà hoặc là 1 dự án hay bài toán khó nào đó cho xong.",
+          "Tuy nhiên, toán lại là môn học anh yêu thích và cũng là một trong những lĩnh vực phù hợp với tôi (vì ngoài toán ra tôi thấy môn nào mình cũng dở) :) Giờ không bám vào 1 môn duy nhất thì làm giiiii ) — suy nghĩ: tìm vấn đề, phân tích, thử cách giải và tìm ra cấu trúc phía sau một bài toán. Ps: Nhiều lúc ước gì mình là học sinh chuyên Tuyên Quang ghê =)))"
+        ],
+        "highlights": [
+          "Về Thành tích: Chắc được cái giải Á quân Rung Chuông Vàng Toán tại trường với mấy cuộc thi olympic toán lúc nhỏ :)) còn lại thì chả có gì nổi bật :)) trình độ toán như người bình thường",
+          "Tư duy Toán học: Tập trung vào phân tích, thử nghiệm và tìm ra cấu trúc cốt lõi của vấn đề."
+        ]
+      },
+      "awards": {
+        "badge": "Á quân",
+        "badgeNote": "Rùa =))))) kết hợp với may mắn và những lần sai cực ngiiuuuuuu",
+        "winnersTitle": "Kết quả Rung Chuông Vàng Toán",
+        "champion": [{ "name": "Nguyễn Thế Duy", "klass": "Lớp 10.3" }],
+        "runnerUp": [
+          { "name": "Trương Minh Trí", "klass": "Lớp 10.3" },
+          { "name": "Nguyễn Trần Duy Khánh", "klass": "Lớp 11.1" },
+          { "name": "Nguyễn Trần Duy Tân", "klass": "Lớp 11.8" },
+          { "name": "Văn Anh Thông", "klass": "Lớp 11.8" }
+        ],
+        "congrats": "Xin chúc mừng thành tích ấn tượng của các bạn. Cảm ơn sự đồng hành của quý thầy cô, Ban chủ nhiệm cùng toàn thể thành viên đã góp phần tạo nên buổi sinh hoạt thật ý nghĩa.",
+        "clubNote": "CLB Toán học hứa hẹn sẽ tiếp tục mang đến những hoạt động thú vị và bổ ích cho tất cả các bạn yêu thích Toán học.",
+        "club": {
+          "school": "TRƯỜNG THPT NGUYỄN THỊ MINH KHAI – BÌNH DƯƠNG",
+          "dept": "TỔ TOÁN",
+          "title": "BUỔI RA MẮT CÂU LẠC BỘ TOÁN HỌC",
+          "photo": "/images/math-2.jpg",
+          "date": "Bình Dương, ngày 01 năm 2025"
+        },
+        "photo": { "src": "/images/math-1.jpg", "caption": "Kết quả giải thưởng CLB Toán 🏆", "rotate": 5 }
+      }
     },
 
     {
       "id": "projects",
-      "num": "07",
+      "num": "06",
       "navLabel": "Dự án",
       "layout": "bento",
       "primaryTitle": "Công nghệ & Dự án cá nhân",
@@ -390,7 +394,7 @@
 
     {
       "id": "influences",
-      "num": "08",
+      "num": "07",
       "navLabel": "Con người",
       "layout": "influences",
       "primaryTitle": "Con người & Sự ảnh hưởng",
@@ -461,7 +465,7 @@
 
     {
       "id": "turning-point",
-      "num": "09",
+      "num": "08",
       "navLabel": "Bước ngoặt",
       "layout": "hero-quote",
       "primaryTitle": "Bước ngoặt & Động lực",
@@ -481,7 +485,7 @@
 
     {
       "id": "vision",
-      "num": "10",
+      "num": "09",
       "navLabel": "Tầm nhìn",
       "layout": "bento",
       "primaryTitle": "Hiện tại & Tầm nhìn tương lai",
@@ -518,7 +522,7 @@
 
     {
       "id": "contact",
-      "num": "11",
+      "num": "10",
       "navLabel": "Liên hệ",
       "layout": "hero-contact",
       "primaryTitle": "Thông tin liên hệ",

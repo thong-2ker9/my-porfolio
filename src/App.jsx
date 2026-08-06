@@ -7,6 +7,7 @@ import Header from './components/Header'
 import HeroSlide from './components/slides/HeroSlide'
 import BentoSlide from './components/slides/BentoSlide'
 import SplitSlide from './components/slides/SplitSlide'
+import ScrapbookSlide from './components/slides/ScrapbookSlide'
 import HeroQuoteSlide from './components/slides/HeroQuoteSlide'
 import HeroContactSlide from './components/slides/HeroContactSlide'
 import AnimeSlide from './components/slides/AnimeSlide'
@@ -20,6 +21,7 @@ const LAYOUTS = {
   hero: HeroSlide,
   bento: BentoSlide,
   split: SplitSlide,
+  scrapbook: ScrapbookSlide,
   'hero-quote': HeroQuoteSlide,
   'hero-contact': HeroContactSlide,
   anime: AnimeSlide,
