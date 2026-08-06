@@ -176,8 +176,18 @@ export default function InfluencesSlide({ slide }) {
                           className="h-10 w-full transition-transform duration-300 group-hover:scale-110"
                           style={{
                             backgroundColor: tint,
-                            WebkitMask: `url(${g.logo}) center / contain no-repeat`,
-                            mask: `url(${g.logo}) center / contain no-repeat`,
+                            /* Luminance mode: black pixels of a black-background logo
+                               become transparent, white/gold pixels show the tint */
+                            WebkitMaskImage: `url(${g.logo})`,
+                            WebkitMaskSize: 'contain',
+                            WebkitMaskRepeat: 'no-repeat',
+                            WebkitMaskPosition: 'center',
+                            WebkitMaskMode: 'luminance',
+                            maskImage: `url(${g.logo})`,
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center',
+                            maskMode: 'luminance',
                           }}
                         />
                       ) : g.logo ? (
