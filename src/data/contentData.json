@@ -1,0 +1,540 @@
+{
+  "meta": {
+    "name": "Văn Anh Thông",
+    "displayName": "ANH THÔNG",
+    "nickname": "Ben",
+    "role": "Học sinh lớp 12 · THPT Nguyễn Thị Minh Khai",
+    "birthYear": 2009,
+    "motto": "Tò mò để học. Học để làm. Làm để biết mình có thể trở thành ai.",
+    "shortIntro": "Xin chào tôi hiện là một học sinh lớp 12 với sự tò mò không ngừng về công nghệ, kỹ thuật và thế giới xung quanh — đang học cách biến sự tò mò thành kiến thức, kiến thức thành những thứ có thể tạo ra, và những thứ tạo ra thành một con đường cho tương lai.",
+    "primaryImage": "/images/hero-portrait.png"
+  },
+
+  "contact": [
+    {
+      "channel": "Gmail",
+      "value": "vananhthong2k9@gmail.com",
+      "href": "email:vananhthong2k9@gmail.com",
+      "highlight": true,
+      "note": "Quan trọng"
+    },
+    {
+      "channel": "LinkedIn",
+      "value": "anh-thông-v-330a69418",
+      "href": "https://www.linkedin.com/in/anh-th%C3%B4ng-v-330a69418/",
+      "highlight": true,
+      "note": "Điểm nhấn"
+    },
+    {
+      "channel": "Facebook",
+      "value": "anh.thong.722672",
+      "href": "https://www.facebook.com/anh.thong.722672/",
+      "highlight": true,
+      "note": "Điểm nhấn"
+    },
+    {
+      "channel": "Instagram",
+      "value": "@anhthong_2009",
+      "href": "https://www.instagram.com/anhthong_2009/",
+      "highlight": true,
+      "note": "Điểm nhấn"
+    },
+    {
+      "channel": "GitHub",
+      "value": "github.com/thong-2ker9",
+      "href": "https://github.com/thong-2ker9",
+      "highlight": true,
+      "note": "Điểm nhấn"
+    },
+    {
+      "channel": "Locket",
+      "value": "locket.cam/nothingiseazy",
+      "href": "https://locket.cam/nothingiseazy",
+      "highlight": false
+    },
+    {
+      "channel": "Discord",
+      "value": "@ohio1067",
+      "href": "https://discord.com/channels/@ohio1067",
+      "highlight": false
+    }
+  ],
+
+  "slides": [
+    {
+      "id": "intro",
+      "num": "01",
+      "navLabel": "Giới thiệu",
+      "layout": "hero",
+      "primaryTitle": "Giới thiệu bản thân",
+      "secondaryTitle": "Khởi đầu từ sự tò mò",
+      "body": [
+        "Văn Anh Thông — thường được gọi là Anh Thông. Ben là một cái tên thân thuộc được sử dụng trong gia đình, không phải tên hiển thị chính thức.",
+        "Anh Thông là một học sinh lớp 12 tại THPT Nguyễn Thị Minh Khai, sinh năm 2009. Hiện tại, Anh Thông đang trong giai đoạn đứng giữa một bên là những năm tháng cuối của thời học sinh và một bên là câu hỏi lớn hơn: mình thực sự muốn trở thành người như thế nào trong tương lai?",
+        "Anh Thông có một sự tò mò khá mạnh đối với những điều mới, đặc biệt là công nghệ, kỹ thuật, lập trình, trí tuệ nhân tạo và cách con người sử dụng công nghệ để giải quyết những vấn đề thực tế.",
+        "Không phải kiểu người đã có sẵn một con đường rõ ràng, Anh Thông thường bắt đầu bằng một câu hỏi: “Cái này hoạt động như thế nào nhỉ?” — rồi từ câu hỏi đó, anh có thể tìm kiếm, đọc, xem, thử nghiệm và tự mình làm một thứ gì đó để hiểu nó rõ hơn."
+      ],
+      "highlights": [
+        "Học sinh lớp 12 THPT Nguyễn Thị Minh Khai (Sinh năm 2009).",
+        "Đam mê công nghệ, kỹ thuật, lập trình và trí tuệ nhân tạo.",
+        "Đặc trưng tính cách: Tò mò, luôn đặt câu hỏi và chủ động thử nghiệm thực tế."
+      ],
+      "images": [
+        {
+          "src": "/images/hero-portrait.png",
+          "role": "hero-card",
+          "alt": "Văn Anh Thông — ảnh chính",
+          "caption": "✦ Ben — 2009"
+        }
+      ]
+    },
+
+    {
+      "id": "orientation",
+      "num": "02",
+      "navLabel": "Định hướng",
+      "layout": "bento",
+      "primaryTitle": "Định hướng Học tập & Nghiên cứu",
+      "secondaryTitle": "Điểm giao thoa giữa Kỹ thuật, Công nghệ và Con người",
+      "body": [
+        "Trong học tập, Anh Thông đặc biệt yêu thích Toán học và có định hướng tìm hiểu các lĩnh vực thiên về kỹ thuật, kỹ sư, công nghệ và nghiên cứu ứng dụng.",
+        "Anh không xem lập trình là mục tiêu nghề nghiệp cuối cùng. Thay vào đó, lập trình là một công cụ giúp anh biến ý tưởng thành sản phẩm, thử nghiệm những điều mình tò mò và hiểu sâu hơn về công nghệ."
+      ],
+      "highlights": [
+        "Mục tiêu: Các lĩnh vực kỹ thuật, kỹ sư và nghiên cứu ứng dụng.",
+        "Lập trình là công cụ hiện thực hóa ý tưởng, không phải mục tiêu cuối cùng.",
+        "Kinh nghiệm tự học lập trình từ lớp 10: Python, HTML, CSS, JavaScript, JSX, TSX."
+      ],
+      "tech": [
+        { "name": "Python", "level": "Đang phát triển", "logo": "/images/logos/python.svg" },
+        { "name": "HTML", "level": "Tự học từ lớp 10", "logo": "/images/logos/html5.svg" },
+        { "name": "CSS", "level": "Tự học từ lớp 10", "logo": "/images/logos/css3.svg" },
+        { "name": "JavaScript", "level": "Tự học từ lớp 10", "logo": "/images/logos/javascript.svg" },
+        { "name": "JSX", "level": "React", "logo": "/images/logos/react.svg" },
+        { "name": "TSX", "level": "TypeScript", "logo": "/images/logos/typescript.svg" },
+        { "name": "TypeScript", "level": "Đang phát triển", "logo": "/images/logos/typescript.svg" },
+        { "name": "C++", "level": "Nền tảng thuật toán", "logo": "/images/logos/cplusplus.svg" },
+        { "name": "Git / GitHub", "level": "Quản lý mã nguồn", "logo": "/images/logos/git.svg" },
+        { "name": "AI APIs", "level": "Thử nghiệm tích hợp" }
+      ],
+      "formula": "Kỹ thuật × Công nghệ × Con người",
+      "images": [
+        {
+          "src": "/images/photo-01.jpg",
+          "role": "bento-main",
+          "alt": "Khoảnh khắc học tập của Anh Thông",
+          "caption": "Học tập — nơi sự tò mò bắt đầu"
+        }
+      ]
+    },
+
+    {
+      "id": "anime",
+      "num": "03",
+      "navLabel": "Anime",
+      "layout": "anime",
+      "primaryTitle": "Hoạt hình & Anime",
+      "secondaryTitle": "Về sở thích cá nhân",
+      "body": [
+        "Từ bộ anime nổi tiếng,nhân vật Gojo trong Jujutsu Kaisen đến Conan và One Punch Man là nơi Anh Thông tìm thấy nguồn cảm hứng cho những công nghệ trong phim ảnh cũng như thỏa được niềm đam mê ."
+      ],
+      "anime": [
+        {
+          "title": "Jujutsu Kaisen",
+          "logo": "/media/anime/logo-jjk.png",
+          "video": "/media/anime/highlight-gojo.mp4",
+          "tag": "👁️ Gojo Satoru",
+          "desc": "Bộ phim yêu thích & chủ yếu — thế giới chú thuật với những trận chiến mãn nhãn và nhân vật Gojo huyền thoại."
+        },
+        {
+          "title": "Thám tử lừng danh Conan",
+          "logo": "/media/anime/logo-conan.png",
+          "video": "/media/anime/highlight-conan.mp4",
+          "tag": "🕵️ Conan",
+          "desc": "Người bạn tuổi thơ — những vụ án li kì và trí tuệ của cậu thám tử nhí qua hàng nghìn tập phim."
+        },
+        {
+          "title": "One Punch Man",
+          "logo": "/media/anime/logo-opm.png",
+          "video": "/media/anime/highlight-opm.mp4",
+          "tag": "💥 Saitama",
+          "desc": "Siêu anh hùng mạnh nhất nhưng lại chán nản vì quá mạnh — hài hước, triết lý và mãn nhãn."
+        }
+      ]
+    },
+
+    {
+      "id": "movies",
+      "num": "04",
+      "navLabel": "Phim & Thể thao",
+      "layout": "movies",
+      "primaryTitle": "Phim ảnh & Thể thao",
+      "secondaryTitle": "Về các bộ phim yêu thích",
+      "body": [
+        "Từ những thước phim trong cuộc sống thì:",
+        "Bên dưới là 3 bộ phim ấn tượng nhất — nhấn vào poster để xem thông tin chi tiết của từng phim."
+      ],
+      "highlights": [
+        "Phim ảnh đa dạng: Từ lãng mạn (Hôn lễ của em) đến bom tấn, kinh điển (The Godfather, The Matrix, Marvel).",
+        "Thể thao: Năng nổ tham gia thi chạy, bơi lội và đá bóng."
+      ],
+      "movies": [
+        {
+          "id": "can-this-love",
+          "title": "Can This Love Be Translated?",
+          "tag": "Phim lãng mạn · Hàn Quốc",
+          "poster": "/media/movies/can-this-love/poster.png",
+          "desc": "Bộ phim tình cảm Hàn Quốc nhẹ nhàng về một diễn viên nói được bốn thứ tiếng và cô phiên dịch viên — những cảm xúc được 'dịch' qua ngôn ngữ của trái tim. Đúng gu lãng mạn mà Anh Thông yêu thích.",
+          "facts": [
+            "Thể loại: Tình cảm · Hài · Lãng mạn",
+            "Quốc gia: Hàn Quốc (tvN) · 12 tập",
+            "Năm phát sóng: 2025",
+            "Diễn viên: Kim Seon-ho & Go Youn-jung",
+            "Biên kịch: Chị em nhà Hong (Hong Jung-eun & Hong Mi-ran)"
+          ],
+          "gallery": [
+            "/media/movies/can-this-love/poster-2.png",
+            "/media/movies/can-this-love/scene-1.png",
+            "/media/movies/can-this-love/scene-2.png",
+            "/media/movies/can-this-love/scene-3.png",
+            "/media/movies/can-this-love/scene-4.png",
+            "/media/movies/can-this-love/scene-5.png"
+          ]
+        },
+        {
+          "id": "hon-le",
+          "title": "Hôn lễ của em",
+          "tag": "Phim tình cảm · Trung Quốc",
+          "poster": "/media/movies/hon-le/poster.png",
+          "desc": "Phim điện ảnh Trung Quốc 'Your Wedding' (2021) — mối tình đầu kéo dài 15 năm của chàng vận động viên bơi lội và cô bạn thời trung học: ngọt ngào, tiếc nuối nhưng rất thật.",
+          "facts": [
+            "Thể loại: Tình cảm · Hài",
+            "Quốc gia: Trung Quốc",
+            "Năm phát hành: 2021",
+            "Đạo diễn: Hàn Thiên (Han Tian)",
+            "Diễn viên: Hứa Quang Hán & Trương Nhược Nam"
+          ],
+          "gallery": [
+            "/media/movies/hon-le/1.png",
+            "/media/movies/hon-le/2.png",
+            "/media/movies/hon-le/3.png"
+          ]
+        },
+        {
+          "id": "marvel",
+          "title": "Marvel — Vũ trụ Điện ảnh",
+          "tag": "Bom tấn siêu anh hùng",
+          "poster": "/media/movies/marvel/endgame.png",
+          "desc": "Hành trình vĩ đại nhất của Vũ trụ Điện ảnh Marvel (MCU) — từ cuộc chiến chống Thanos trong Avengers: Infinity War đến màn hạ màn xúc động của Avengers: Endgame.",
+          "facts": [
+            "Thể loại: Hành động · Siêu anh hùng",
+            "Avengers: Endgame (2019) — đạo diễn anh em Russo",
+            "Avengers: Infinity War (2018)",
+            "Doanh thu Endgame ≈ 2,8 tỷ USD — từng là phim ăn khách nhất lịch sử",
+            "Dàn sao: Robert Downey Jr., Chris Evans, Scarlett Johansson..."
+          ],
+          "gallery": [
+            "/media/movies/marvel/endgame.png",
+            "/media/movies/marvel/infinity-war.png"
+          ]
+        }
+      ],
+      "classics": [
+        {
+          "title": "The Matrix",
+          "image": "/media/movies/the-matrix.png",
+          "desc": "Kinh điển khoa học viễn tưởng — câu hỏi về thực tại và tự do."
+        },
+        {
+          "title": "The Godfather",
+          "image": "/media/movies/the-godfather.png",
+          "desc": "Kiệt tác điện ảnh về gia đình, quyền lực và sự lựa chọn."
+        }
+      ],
+      "sports": {
+        "title": "Thể thao & Năng động",
+        "sub": "Chạy · Bơi · Bóng đá",
+        "photos": [
+          { "src": "/media/sports/1.jpg", "title": "Chạy bộ", "caption": "Những bước chạy dài trên đường đua — bền bỉ và quyết tâm về đích." },
+          { "src": "/media/sports/2.jpg", "title": "Thi đấu", "caption": "Khoảnh khắc tập luyện nghiêm túc, chuẩn bị cho từng trận đấu." },
+          { "src": "/media/sports/3.jpg", "title": "Bóng đá", "caption": "Trên sân cỏ cùng đồng đội — tinh thần thi đấu hết mình." },
+          { "src": "/media/sports/4.jpg", "title": "Bơi lội", "caption": "Dưới làn nước xanh — sự dẻo dai và kiểm soát từng nhịp thở." },
+          { "src": "/media/sports/5.jpg", "title": "Năng động", "caption": "Thể thao là lối thoát năng lượng — vui vẻ, năng nổ, không bỏ cuộc." }
+        ]
+      }
+    },
+
+    {
+      "id": "science",
+      "num": "05",
+      "navLabel": "Khoa học Kỹ thuật",
+      "layout": "split",
+      "primaryTitle": "Khoa học Kỹ thuật",
+      "secondaryTitle": "Đưa ý tưởng thử nghiệm thành sản phẩm thực tế",
+      "body": [
+        "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường.",
+        "Đây không chỉ là một thành tích, mà còn là một trong những trải nghiệm khiến Anh Thông nhận ra rằng những ý tưởng ban đầu tưởng như chỉ là thử nghiệm cá nhân hoàn toàn có thể được phát triển thành một sản phẩm thực tế."
+      ],
+      "highlights": [
+        "Dự án tiêu biểu: Ứng dụng hỗ trợ học tập và đời sống học đường.",
+        "Thành tích: Giải Nhất Cuộc thi Khoa học Kỹ thuật cấp trường.",
+        "Kinh nghiệm tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
+      ],
+      "badge": "🥇 Giải Nhất",
+      "badgeSub": "Cuộc thi Khoa học Kỹ thuật cấp trường",
+      "images": [
+        {
+          "src": "/images/photo-09.jpg",
+          "role": "split-media",
+          "alt": "Giải thưởng Khoa học Kỹ thuật",
+          "caption": "Ý tưởng thử nghiệm → sản phẩm thực tế"
+        }
+      ]
+    },
+
+    {
+      "id": "math",
+      "num": "06",
+      "navLabel": "Toán học",
+      "layout": "split",
+      "flip": true,
+      "primaryTitle": "Đam mê Toán học",
+      "secondaryTitle": "Cấu trúc và logic phía sau mọi vấn đề",
+      "body": [
+        "Anh Thông cũng từng tham gia Rung Chuông Vàng Toán học tại trường.",
+        "Toán là môn học anh yêu thích nhất và cũng là một trong những lĩnh vực phù hợp với cách anh thích suy nghĩ: tìm vấn đề, phân tích, thử cách giải và tìm ra cấu trúc phía sau một bài toán."
+      ],
+      "highlights": [
+        "Thành tích: Á quân Rung Chuông Vàng Toán học tại trường.",
+        "Tư duy Toán học: Tập trung vào phân tích, thử nghiệm và tìm ra cấu trúc cốt lõi của vấn đề."
+      ],
+      "badge": "🥈 Á quân",
+      "badgeSub": "Rung Chuông Vàng Toán học tại trường",
+      "images": [
+        {
+          "src": "/images/photo-10.jpg",
+          "role": "split-media",
+          "alt": "Giải thưởng Toán học",
+          "caption": "Tìm cấu trúc phía sau một bài toán"
+        }
+      ]
+    },
+
+    {
+      "id": "projects",
+      "num": "07",
+      "navLabel": "Dự án",
+      "layout": "bento",
+      "primaryTitle": "Công nghệ & Dự án cá nhân",
+      "secondaryTitle": "Dấu chân trên hành trình lập trình",
+      "body": [
+        "Anh Thông bắt đầu code từ lớp 10. Từ đó, việc lập trình dần trở thành một cách để anh thử nghiệm những ý tưởng xuất hiện trong đầu."
+      ],
+      "highlights": [
+        "Bắt đầu lập trình thực hành từ lớp 10.",
+        "Danh mục dự án: Giáo dục, Tâm lý, Bluetooth chat, Photobooth, tích hợp AI API.",
+        "Kho lưu trữ mã nguồn: github.com/thong-2ker9"
+      ],
+      "projects": [
+        {
+          "title": "Ứng dụng hỗ trợ học sinh",
+          "desc": "Hỗ trợ học tập và đời sống học đường — đạt Giải Nhất KHKT.",
+          "tag": "Giáo dục",
+          "icon": "🎓"
+        },
+        {
+          "title": "Photobooth",
+          "desc": "Dự án chụp ảnh vui nhộn, kỷ niệm khoảnh khắc.",
+          "tag": "Sáng tạo",
+          "icon": "📸"
+        },
+        {
+          "title": "Bluetooth Chat",
+          "desc": "Nhắn tin / giao tiếp qua Bluetooth không cần wifi, tương tự bitchat.",
+          "tag": "Truyền thông",
+          "icon": "📡"
+        },
+        {
+          "title": "AI Call API",
+          "desc": "Những thử nghiệm tích hợp AI API vào sản phẩm.",
+          "tag": "AI",
+          "icon": "🤖"
+        },
+        {
+          "title": "Ứng dụng Tâm lý & Đời sống",
+          "desc": "Ứng dụng liên quan đến tâm lý và đời sống.",
+          "tag": "Tâm lý",
+          "icon": "💡"
+        },
+        {
+          "title": "Web & App nhỏ",
+          "desc": "Các sản phẩm web và ứng dụng nhỏ trên hành trình tự học.",
+          "tag": "Web",
+          "icon": "🌐"
+        }
+      ],
+      "github": {
+        "label": "GitHub cá nhân",
+        "url": "https://github.com/thong-2ker9",
+        "handle": "thong-2ker9"
+      },
+      "images": [
+        {
+          "src": "/images/photo-11.jpg",
+          "role": "bento-feature",
+          "alt": "Một khoảnh khắc lập trình",
+          "caption": "Mỗi dự án phản ánh một giai đoạn tò mò"
+        }
+      ]
+    },
+
+    {
+      "id": "influences",
+      "num": "08",
+      "navLabel": "Con người",
+      "layout": "influences",
+      "primaryTitle": "Con người & Sự ảnh hưởng",
+      "secondaryTitle": "Định hình bản thân qua trải nghiệm đa chiều",
+      "body": [
+        "Nếu phải chọn một đặc điểm để mô tả Anh Thông, có lẽ đó không phải là “lập trình viên”, “học sinh giỏi” hay “nhà nghiên cứu”. Mà là: Một người tò mò. Tò mò về cách một thứ hoạt động. Tò mò về việc liệu mình có thể tự làm nó hay không. Tò mò về những công nghệ mới. Tò mò về con người.",
+        "Sự tò mò đó đôi lúc khiến hành trình của Anh Thông không đi theo một đường thẳng. Nhưng chính những lần rẽ hướng, thử nghiệm và bắt đầu lại cũng tạo nên một phần con người anh hiện tại."
+      ],
+      "highlights": [
+        "Từ khóa cốt lõi: “Một người tò mò”.",
+        "Ảnh hưởng công nghệ: Học hỏi từ các Creator/Developer nổi bật (Dũng Lại Lập Trình, Tôi Đi Code Dạo, Hiếu PC).",
+        "Giải trí thường nhật: Chơi đa dạng các thể loại game với kỹ năng mức khá đến chuyên sâu (Medium - Master)."
+      ],
+      "influencers": [
+        {
+          "name": "Dũng Lại Lập Trình",
+          "role": "Creator / Developer VN",
+          "image": "/media/influencers/dung-lai-lap-trinh.png",
+          "bio": "Là một trong những kênh dạy lập trình tiếng Việt nổi tiếng nhất — chia sẻ kiến thức lập trình web, Python và tư duy tự học cho người mới bắt đầu.",
+          "links": [
+            { "label": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/dunglailaptrinh" },
+            { "label": "TikTok", "icon": "external", "url": "https://www.tiktok.com/@dunglailaptrinh" },
+            { "label": "Cộng đồng FB", "icon": "facebook", "url": "https://www.facebook.com/groups/dunglailaptrinh.web" }
+          ]
+        },
+        {
+          "name": "Tôi Đi Code Dạo",
+          "role": "Developer VN",
+          "image": "/media/influencers/toi-di-code-dao.png",
+          "bio": "Phạm Huy Hoàng — cựu sinh viên FPT, từng làm developer ở Anh và Singapore. Chia sẻ kiến thức kỹ thuật, kinh nghiệm ngành IT, kỹ năng mềm và câu chuyện nghề lập trình rất thật.",
+          "links": [
+            { "label": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/c/tôidicodedạoblog" },
+            { "label": "Blog", "icon": "globe", "url": "https://toidicodedao.com/" },
+            { "label": "Facebook", "icon": "facebook", "url": "https://www.facebook.com/toidicodedao" }
+          ]
+        },
+        {
+          "name": "Hiếu PC",
+          "role": "Creator công nghệ",
+          "image": "/media/influencers/hieu-pc.png",
+          "bio": "YouTuber công nghệ Việt Nam chuyên về PC, laptop, build máy tính và setup — nơi Anh Thông học cách lựa chọn và tận hưởng phần cứng.",
+          "links": []
+        },
+        {
+          "name": "Anh coder Ấn Độ",
+          "role": "Nguồn cảm hứng tự học",
+          "icon": "🇮🇳",
+          "bio": "Những lập trình viên Ấn Độ trên YouTube dạy code miễn phí — nguồn cảm hứng tự học mỗi ngày.",
+          "links": []
+        }
+      ],
+      "games": [
+        { "name": "Valorant", "logo": "/media/games/valorant.png", "tint": "#ff4655", "mono": true },
+        { "name": "Free Fire", "logo": "/media/games/free-fire.png", "tint": "#ff7a1a", "mono": true },
+        { "name": "Liên Quân Mobile", "logo": "/media/games/lien-quan.png", "tint": "#ff4d4d" },
+        { "name": "ZingSpeed", "logo": null, "tint": "#ff8c1a" },
+        { "name": "Minecraft", "logo": "/media/games/minecraft.png", "tint": "#6bb23c" },
+        { "name": "Roblox", "logo": "/media/games/roblox.png", "tint": "#e2231a" }
+      ],
+      "gamesNote": "Trình độ đa số là từ medium đến master=)) [nhờ team gánh=))) ]",
+      "images": [
+        { "src": "/media/hobbies/1.jpg", "role": "hobby-grid" },
+        { "src": "/media/hobbies/2.jpg", "role": "hobby-grid" },
+        { "src": "/media/hobbies/4.jpg", "role": "hobby-grid" },
+        { "src": "/media/hobbies/6.jpg", "role": "hobby-grid" }
+      ]
+    },
+
+    {
+      "id": "turning-point",
+      "num": "09",
+      "navLabel": "Bước ngoặt",
+      "layout": "hero-quote",
+      "primaryTitle": "Bước ngoặt & Động lực",
+      "secondaryTitle": "Định nghĩa lại thành công & Trách nhiệm gia đình",
+      "body": [
+        "Có một giai đoạn khiến cách Anh Thông nhìn về tương lai thay đổi: khi gia đình gặp khó khăn. Những khó khăn đó khiến anh bắt đầu suy nghĩ nhiều hơn về những điều trước đây có thể từng được xem là rất xa: Mình là ai? Mình muốn trở thành người như thế nào? Mình có thể làm được gì cho gia đình? Sau này mình muốn có một cuộc sống như thế nào?",
+        "Thành công hay thất bại đối với Anh Thông không chỉ đơn giản là điểm số hay một chức danh nghề nghiệp mà còn là sự trải nghiệm và học hỏi kinh nghiệm từ chính những sai lầm. Với mong muốn một ngày nào đó có đủ năng lực và sự độc lập để lo được cho bản thân và gia đình, có khả năng tự quyết định cuộc sống của mình, được đi nhiều nơi, nhìn thấy nhiều thứ và không phải sống hoàn toàn theo những khuôn mẫu mà xã hội đặt ra."
+      ],
+      "highlights": [
+        "Khó khăn gia đình là bước ngoặt thay đổi nhận thức.",
+        "Động lực cốt lõi: Năng lực độc lập, chăm lo cho gia đình.",
+        "Mục tiêu: Quyền tự quyết định cuộc sống cá nhân, thoát khỏi khuôn mẫu."
+      ],
+      "quote": "Không cần phải cố gắng để trở nên hoàn hảo. Mà là đủ trưởng thành, đủ năng lực và đủ tự do để tự viết nên con đường của chính mình.",
+      "backgroundImage": "/images/photo-13.jpg"
+    },
+
+    {
+      "id": "vision",
+      "num": "10",
+      "navLabel": "Tầm nhìn",
+      "layout": "bento",
+      "primaryTitle": "Hiện tại & Tầm nhìn tương lai",
+      "secondaryTitle": "Hành trình biến sự tò mò thành tương lai",
+      "body": [
+        "Hiện tại, Anh Thông đang đứng trước một giai đoạn chuyển tiếp quan trọng: Lớp 12. Thi cử. Định hướng đại học. Định hướng nghề nghiệp. Và rất nhiều câu hỏi chưa có câu trả lời hoàn chỉnh.",
+        "Cũng như là đang hướng tới các lĩnh vực kỹ thuật và kỹ sư, đồng thời tiếp tục tìm hiểu công nghệ, AI và lập trình như những công cụ có thể hỗ trợ con đường đó. Và cũng chưa biết chính xác mình sẽ trở thành ai — và sau này sẽ trở thành người như thế nào."
+      ],
+      "highlights": [
+        "Đang trong giai đoạn chuyển tiếp định hướng tương lai.",
+        "Mục tiêu ngắn hạn: Tự chủ tài chính, xây dựng sản phẩm thực tế, chăm lo gia đình.",
+        "Châm ngôn cá nhân: “Tò mò để học. Học để làm. Làm để biết mình có thể trở thành ai.”"
+      ],
+      "motto": " Tò mò để học. Học để làm. Làm để biết mình có thể trở thành ai.",
+      "goals": [
+        "Học tập tốt hơn",
+        "Tìm được hướng đi phù hợp với bản thân",
+        "Phát triển năng lực kỹ thuật và nghiên cứu",
+        "Có thêm những thành tích trong học thuật",
+        "Xây dựng sản phẩm có giá trị thực tế",
+        "Tự chủ về tài chính",
+        "Được đi nhiều nơi và trải nghiệm nhiều điều",
+        "Có thể chăm lo cho gia đình"
+      ],
+      "images": [
+        {
+          "src": "/images/photo-14.jpg",
+          "role": "bento-feature",
+          "alt": "Anh Thông hướng về tương lai",
+          "caption": "Câu chuyện vẫn đang được viết"
+        }
+      ]
+    },
+
+    {
+      "id": "contact",
+      "num": "11",
+      "navLabel": "Liên hệ",
+      "layout": "hero-contact",
+      "primaryTitle": "Thông tin liên hệ",
+      "secondaryTitle": "Các kênh mạng xã hội và phương thức kết nối",
+      "body": [
+        "Hãy kết nối với Anh Thông qua các kênh dưới đây — dù là để trao đổi về công nghệ, chia sẻ một bộ phim hay chỉ đơn giản là làm quen."
+      ],
+      "highlights": [],
+      "images": [
+        {
+          "src": "/images/photo-15.jpg",
+          "role": "contact-accent",
+          "alt": "Anh Thông",
+          "caption": "Rất vui được làm quen!"
+        }
+      ]
+    }
+  ]
+}
