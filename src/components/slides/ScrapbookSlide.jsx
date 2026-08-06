@@ -170,45 +170,6 @@ export default function ScrapbookSlide({ slide }) {
               </p>
             </div>
 
-            {/* card KẾT QUẢ RUNG CHUÔNG VÀNG TOÁN */}
-            <div className="relative z-10 mt-6 max-w-xl rounded-[12px] border border-white/10 bg-[#15151b] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
-              <p className="flex items-center gap-2 font-display text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
-                🏆 {aw.winnersTitle}
-              </p>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <div>
-                  <p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-amber-300">
-                    Quán quân
-                  </p>
-                  <ul className="mt-2 space-y-1.5">
-                    {aw.champion.map((p) => (
-                      <li key={p.name} className="text-left text-sm text-body/90">
-                        🏆 <span className="font-medium text-white">{p.name}</span>{' '}
-                        <span className="text-body/50">· {p.klass}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-slate-300">
-                    Á quân
-                  </p>
-                  <ul className="mt-2 space-y-1.5">
-                    {aw.runnerUp.map((p) => (
-                      <li key={p.name} className="text-left text-sm text-body/90">
-                        🥈 <span className="font-medium text-white">{p.name}</span>{' '}
-                        <span className="text-body/50">· {p.klass}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <p className="mt-4 border-t border-white/10 pt-3 text-left text-xs leading-relaxed text-body/60">
-                ✉️ {aw.congrats}
-              </p>
-              <p className="mt-2 text-left text-xs leading-relaxed text-body/60">📁 {aw.clubNote}</p>
-            </div>
-
             {/* polaroid CLB Toán học (ảnh buổi ra mắt — math-1), hơi xoay nghiêng */}
             <div className="relative z-10 mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-3 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
               <p className="text-center text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-800">
