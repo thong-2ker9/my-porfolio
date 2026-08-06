@@ -167,8 +167,8 @@ export default function HeroSlide({ slide, meta }) {
 
         {/* right — narrow photo card (~1/5 slide) with colorful layers behind */}
         <div ref={cardRef} className="flex w-full items-center justify-center lg:justify-end">
-          {/* shifted left ~9% + tilted ~10° right so the frame feels like a tossed poster */}
-          <div className="rotate-[10deg] lg:-translate-x-[9%]" style={{ perspective: '1200px' }}>
+          {/* shifted left ~9% + tilted ~5° right so the frame feels like a tossed poster */}
+          <div className="rotate-[5deg] lg:-translate-x-[9%]" style={{ perspective: '1200px' }}>
             <div
               ref={tiltRef}
               onMouseMove={handleMove}
