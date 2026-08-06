@@ -1,15 +1,14 @@
-import { Cog, Ruler, Pencil, Search, Calculator, Trophy } from 'lucide-react'
+import { Cog, BarChart3, Ruler, Pencil, Search, Calculator, Trophy } from 'lucide-react'
 import { SlideSection } from './helpers'
 
 /* Tailwind literal classes so arbitrary rotate values are generated */
 const ROT = {
+  '-4': 'rotate-[-4deg]',
   '-3': 'rotate-[-3deg]',
-  '-2': 'rotate-[-2deg]',
-  2: 'rotate-[2deg]',
   3: 'rotate-[3deg]',
 }
 
-/* ── Clean polaroid: white frame only — no captions, no notes ── */
+/* ── Polaroid: white frame only — no captions, no notes ── */
 function Polaroid({ src, rotate = 0, className = '', imgClass = '' }) {
   return (
     <div
@@ -93,16 +92,17 @@ export default function ScrapbookSlide({ slide }) {
           <div data-reveal className="relative order-1">
             <GogglesDoodle className="absolute -left-3 -top-9 w-20 rotate-[-12deg] opacity-80 sm:w-24" />
 
-            <p className="inline-flex items-center gap-2.5 rounded-full border border-accent/40 bg-accent/10 px-3.5 py-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
-              <span className="rounded-full bg-accent px-1.5 py-0.5 text-[9px] font-bold text-white">
+            <p className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-[#13243d] px-3.5 py-1.5 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
+              <span className="rounded-full bg-accent/80 px-1.5 py-0.5 text-[9px] font-bold text-white">
                 {slide.num}
               </span>
+              <span className="text-white/40">—</span>
               {s.subtitle}
             </p>
 
             <h2 className="giant-text mt-4 text-balance text-4xl sm:text-5xl">{s.title}</h2>
 
-            {/* glowing brain sticker (user's sticker-3) */}
+            {/* glowing blue brain (user's sticker-3) — demo middle-right */}
             <img
               src="/images/sticker-3.png"
               alt=""
@@ -125,42 +125,52 @@ export default function ScrapbookSlide({ slide }) {
             </ul>
           </div>
 
-          {/* ══ 3 SCIENCE PHOTOS (top-right, clean grid — no overlap) ══ */}
-          <div data-reveal className="relative order-2 mx-auto w-full max-w-lg lg:mt-6">
-            {/* user's cartoon sticker — floats above, not on the photos */}
+          {/* ══ 3 OVERLAPPING POLAROIDS (top-right) — demo arrangement ══ */}
+          <div data-reveal className="relative order-2 mx-auto w-full max-w-md lg:mt-4">
+            {/* user's cartoon sticker — floats above the cluster */}
             <img
               src="/images/sticker-1.png"
               alt=""
               aria-hidden="true"
               className="absolute -top-12 right-0 w-16 rotate-[10deg] drop-shadow-lg sm:w-20"
             />
-            <div className="grid grid-cols-[0.9fr_1.1fr] items-start gap-5">
-              {/* medal — tall portrait on the left */}
+            <div className="relative h-[380px] w-full sm:h-[420px]">
+              {/* certificate (left, behind) */}
+              <Polaroid
+                src={s.photos[0].src}
+                rotate={s.photos[0].rotate}
+                className="absolute left-0 top-12 z-10 w-[44%]"
+                imgClass="aspect-[4/3]"
+              />
+              {/* medal (right, tall) */}
               <Polaroid
                 src={s.photos[2].src}
-                rotate={-3}
-                className="w-full"
+                rotate={s.photos[2].rotate}
+                className="absolute bottom-0 right-0 z-20 w-[38%]"
                 imgClass="aspect-[3/4] object-cover object-top"
               />
-              {/* certificate + group stacked on the right */}
-              <div className="flex flex-col gap-5">
-                <Polaroid
-                  src={s.photos[0].src}
-                  rotate={2}
-                  className="w-full"
-                  imgClass="aspect-[4/3]"
-                />
-                <Polaroid
-                  src={s.photos[1].src}
-                  rotate={-2}
-                  className="w-full"
-                  imgClass="aspect-[4/3]"
-                />
+              {/* group photo (middle, on top) with red "love" scribble */}
+              <div className="absolute left-[28%] top-0 z-30 w-[48%]">
+                <div className={`transition-transform duration-300 ease-out hover:rotate-0 hover:scale-105 ${ROT[s.photos[1].rotate] ?? ''}`}>
+                  <figure className="bg-white p-2 shadow-[0_14px_30px_rgba(0,0,0,0.5)]">
+                    <div className="relative overflow-hidden bg-neutral-200">
+                      <img
+                        src={s.photos[1].src}
+                        alt=""
+                        loading="lazy"
+                        className="aspect-[4/3] h-full w-full object-cover"
+                      />
+                      <span className="absolute bottom-2 right-2 -rotate-12 font-hand text-2xl font-bold text-red-600/90">
+                        love ❤️
+                      </span>
+                    </div>
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* ══ Á QUÂN + CLB TOÁN PHOTOS (bottom-left) ══ */}
+          {/* ══ Á QUÂN + CLB TOÁN (bottom-left) — demo arrangement ══ */}
           <div data-reveal className="relative order-3">
             {/* purple Á-quân badge + handwritten note */}
             <div className="flex items-start gap-4">
@@ -175,20 +185,62 @@ export default function ScrapbookSlide({ slide }) {
               </p>
             </div>
 
-            {/* two clean CLB Toán polaroids — no text overlays (the photos already carry it) */}
-            <div className="mt-8 grid max-w-xl grid-cols-2 gap-5">
-              <Polaroid
-                src={aw.photos[0].src}
-                rotate={-2}
-                className="w-full"
-                imgClass="aspect-[4/3]"
-              />
-              <Polaroid
-                src={aw.photos[1].src}
-                rotate={3}
-                className="w-full"
-                imgClass="aspect-[4/3]"
-              />
+            {/* dark winners card — text only */}
+            <div className="mt-6 max-w-xl rounded-2xl border border-white/10 bg-[#15151b] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
+              <p className="flex items-center gap-2 font-display text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                🏆 {aw.winnersTitle}
+              </p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-amber-300">
+                    Quán quân
+                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {aw.champion.map((p) => (
+                      <li key={p.name} className="text-sm text-body/90">
+                        🥇 <span className="font-medium text-white">{p.name}</span>{' '}
+                        <span className="text-body/50">· {p.klass}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-slate-300">
+                    Á quân
+                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {aw.runnerUp.map((p) => (
+                      <li key={p.name} className="text-sm text-body/90">
+                        🥈 <span className="font-medium text-white">{p.name}</span>{' '}
+                        <span className="text-body/50">· {p.klass}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <p className="mt-4 border-t border-white/10 pt-3 text-xs leading-relaxed text-body/60">
+                ✉️ {aw.congrats}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-body/60">📁 {aw.clubNote}</p>
+            </div>
+
+            {/* white club card — school header, red title, club photo (math-1), date */}
+            <div className="mt-8 w-[300px] max-w-full rotate-[-2deg] bg-white p-3 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
+              <p className="text-center text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-800">
+                {aw.club.school}
+              </p>
+              <p className="text-center text-[9px] font-semibold uppercase tracking-[0.3em] text-neutral-500">
+                {aw.club.dept}
+              </p>
+              <p className="mt-1.5 text-center font-display text-sm font-extrabold uppercase tracking-wide text-red-600">
+                {aw.club.title}
+              </p>
+              <div className="mt-2 overflow-hidden">
+                <img src={aw.club.photo} alt="" loading="lazy" className="h-44 w-full object-cover" />
+              </div>
+              <p className="mt-2 text-right font-hand text-base text-neutral-600">
+                {aw.club.date}
+              </p>
             </div>
 
             {/* tennis racket doodle */}
@@ -197,7 +249,7 @@ export default function ScrapbookSlide({ slide }) {
 
           {/* ══ VỀ TOÁN HỌC (bottom-right) ══ */}
           <div data-reveal className="relative order-4 lg:mt-10">
-            {/* ruler + pencil doodles (yellow) */}
+            {/* ruler + pencil doodles (yellow) — demo top-right */}
             <div className="absolute -top-10 right-0 hidden items-center gap-2 sm:flex">
               <Ruler
                 size={44}
@@ -214,7 +266,7 @@ export default function ScrapbookSlide({ slide }) {
               className="absolute -top-8 right-24 hidden w-28 -rotate-6 sm:block"
             />
 
-            <p className="flex items-center gap-3 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
+            <p className="flex items-center justify-end gap-3 font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-cyber">
               <span className="h-px w-8 bg-accent/60" />
               {m.subtitle}
               <span className="h-px w-8 bg-accent/60" />
@@ -223,6 +275,11 @@ export default function ScrapbookSlide({ slide }) {
             <h2 className="giant-text mt-4 text-right text-balance text-4xl sm:text-5xl">
               {m.title}
             </h2>
+
+            {/* blue bar-graph under the heading (demo) */}
+            <div className="mt-3 flex justify-end">
+              <BarChart3 size={38} strokeWidth={2.2} className="text-cyber/80" />
+            </div>
 
             <div className="mt-6 ml-auto flex max-w-xl flex-col gap-4 text-right">
               {m.body.map((p, i) => (
@@ -245,11 +302,6 @@ export default function ScrapbookSlide({ slide }) {
                 </li>
               ))}
             </ul>
-
-            {/* handwritten note */}
-            <p className="mt-6 text-right font-hand text-xl text-body/60">
-              …trình độ toán như người bình thường nhưng thích cách nghĩ :))
-            </p>
           </div>
         </div>
 

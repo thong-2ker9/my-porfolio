@@ -273,8 +273,7 @@
         "title": "Khoa học Kỹ thuật",
         "subtitle": "Đưa ý tưởng thử nghiệm thành sản phẩm thực tế",
         "body": [
-          "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường.",
-          "Tuy chỉ là tham gia cho vuii chứ chả có giải nhưng mà cũng lại là tự hào một xíu, cũng vừa vui vừa buồn vì kĩ năng thuyết trình và lập luận còn hơi yếu kém 1 xíu.",
+          "Một trong những trải nghiệm đáng nhớ trong những năm học phổ thông của Anh Thông là tham gia Cuộc thi Khoa học Kỹ thuật. Đề tài của anh tập trung vào việc xây dựng một ứng dụng hỗ trợ học sinh — hướng tới việc ứng dụng công nghệ để hỗ trợ học sinh trong quá trình học tập và đời sống học đường. Tuy chỉ là tham gia cho vuii chứ chả có giải nhưng mà cũng lại là tự hào một xíu, cũng vừa vui vừa buồn vì kĩ năng thuyết trình và lập luận còn hơi yếu kém 1 xíu.",
           "Đây không chỉ là một thành tích, mà còn là một trong những trải nghiệm khiến Anh Thông nhận ra rằng những ý tưởng ban đầu tưởng như chỉ là thử nghiệm cá nhân hoàn toàn có thể được phát triển thành một sản phẩm thực tế."
         ],
         "highlights": [
@@ -283,8 +282,8 @@
           "Kinh nghiệm từng tham gia Cuộc thi Khoa học Kỹ thuật cấp Thành phố."
         ],
         "photos": [
-          { "src": "/images/science-3.jpg", "rotate": 2 },
-          { "src": "/images/science-2.jpg", "rotate": -2 },
+          { "src": "/images/science-3.jpg", "rotate": -4 },
+          { "src": "/images/science-2.jpg", "rotate": 3 },
           { "src": "/images/science-1.jpg", "rotate": -3 }
         ]
       },
@@ -303,10 +302,23 @@
       "awards": {
         "badge": "Á quân",
         "badgeNote": "Rùa =))))) kết hợp với may mắn và những lần sai cực ngiiuuuuuu",
-        "photos": [
-          { "src": "/images/math-2.jpg", "rotate": -2 },
-          { "src": "/images/math-1.jpg", "rotate": 3 }
-        ]
+        "winnersTitle": "Kết quả Rung Chuông Vàng Toán",
+        "champion": [{ "name": "Nguyễn Thế Duy", "klass": "Lớp 10.3" }],
+        "runnerUp": [
+          { "name": "Trương Minh Trí", "klass": "Lớp 10.3" },
+          { "name": "Nguyễn Trần Duy Khánh", "klass": "Lớp 11.1" },
+          { "name": "Nguyễn Trần Duy Tân", "klass": "Lớp 11.8" },
+          { "name": "Văn Anh Thông", "klass": "Lớp 11.8" }
+        ],
+        "congrats": "Xin chúc mừng thành tích ấn tượng của các bạn. Cảm ơn sự đồng hành của quý thầy cô, Ban chủ nhiệm cùng toàn thể thành viên đã góp phần tạo nên buổi sinh hoạt thật ý nghĩa.",
+        "clubNote": "CLB Toán học hứa hẹn sẽ tiếp tục mang đến những hoạt động thú vị và bổ ích cho tất cả các bạn yêu thích Toán học.",
+        "club": {
+          "school": "TRƯỜNG THPT NGUYỄN THỊ MINH KHAI – BÌNH DƯƠNG",
+          "dept": "TỔ TOÁN",
+          "title": "BUỔI RA MẮT CÂU LẠC BỘ TOÁN HỌC",
+          "photo": "/images/math-1.jpg",
+          "date": "Bình Dương, ngày 01 năm 2025"
+        }
       }
     },
 
