@@ -16,6 +16,17 @@ const WORD_MS = 240 // per-greeting dwell (spec: 200–300ms)
 const HOLD_LAST_MS = 700 // extra hold on the final language
 const EXIT_MS = 800
 
+/** Instant jump to top — bypasses the CSS `scroll-behavior: smooth`, which
+ *  would otherwise animate the jump (visibly scrolling through mid-page
+ *  slides before reaching slide 1). */
+const scrollTopInstant = () => {
+  const docEl = document.documentElement
+  const prev = docEl.style.scrollBehavior
+  docEl.style.scrollBehavior = 'auto'
+  window.scrollTo(0, 0)
+  docEl.style.scrollBehavior = prev
+}
+
 export default function Preloader({ onComplete }) {
   const overlayRef = useRef(null)
   const innerRef = useRef(null)
@@ -39,7 +50,7 @@ export default function Preloader({ onComplete }) {
     // Mid-page reloads otherwise restore the old scroll position, so the intro
     // would play over slide 8 and the earlier reveals would already be passed.
     history.scrollRestoration = 'manual'
-    window.scrollTo(0, 0)
+    scrollTopInstant()
     root.style.overflow = 'hidden'
     return () => {
       root.style.overflow = prevOverflow
@@ -83,7 +94,7 @@ export default function Preloader({ onComplete }) {
     if (!leaving) return
     // Re-assert the top position as the curtain lifts — covers any late
     // browser scroll-restoration that fired after the mount-time scrollTo.
-    window.scrollTo(0, 0)
+    scrollTopInstant()
     const overlay = overlayRef.current
     const inner = innerRef.current
 

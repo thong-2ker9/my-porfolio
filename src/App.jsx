@@ -99,6 +99,25 @@ export default function App() {
     }
   }, [slides, introDone])
 
+  // Instant jump to top — bypasses the CSS `scroll-behavior: smooth` so the
+  // intro never visibly re-scrolls up through mid-page slides.
+  const scrollTopInstant = () => {
+    const docEl = document.documentElement
+    const prev = docEl.style.scrollBehavior
+    docEl.style.scrollBehavior = 'auto'
+    window.scrollTo(0, 0)
+    docEl.style.scrollBehavior = prev
+  }
+
+  // Once the preloader unmounts (overflow restored), pin the page to the top
+  // on the next frame — covers any late browser scroll-restoration so the
+  // first visible slide is always slide 1, right after the curtain lifts.
+  useEffect(() => {
+    if (!introDone) return
+    const id = requestAnimationFrame(scrollTopInstant)
+    return () => cancelAnimationFrame(id)
+  }, [introDone])
+
   // smooth-scroll to any slide by index
   const navigateTo = (index) => {
     const target = document.getElementById(`slide-${slides[index].id}`)
@@ -119,7 +138,7 @@ export default function App() {
       {!introDone && (
         <Preloader
           onComplete={() => {
-            window.scrollTo(0, 0)
+            scrollTopInstant()
             setIntroDone(true)
           }}
         />

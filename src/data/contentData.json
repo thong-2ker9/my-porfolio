@@ -283,19 +283,19 @@
         ],
         "photos": [
           {
-            "src": "/images/science-3.jpg",
-            "rotate": 3,
-            "pos": { "left": "30%", "top": "0%", "width": "38%", "z": 1 }
+            "src": "/images/science-1.jpg",
+            "rotate": -4,
+            "pos": { "left": "2%", "top": "0%", "width": "40%", "z": 2 }
           },
           {
-            "src": "/images/science-1.jpg",
-            "rotate": -5,
-            "pos": { "left": "1.5%", "bottom": "2%", "width": "45%", "z": 2 }
+            "src": "/images/science-3.jpg",
+            "rotate": 3,
+            "pos": { "right": "1%", "top": "0%", "width": "47%", "z": 1 }
           },
           {
             "src": "/images/science-2.jpg",
             "rotate": 2,
-            "pos": { "right": "1%", "bottom": "1%", "width": "49%", "z": 3 }
+            "pos": { "left": "24%", "bottom": "0%", "width": "52%", "z": 3 }
           }
         ]
       },

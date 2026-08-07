@@ -3,7 +3,7 @@ import { SlideSection } from './helpers'
 
 /* Tailwind literal classes so arbitrary rotate values are generated */
 const ROT = {
-  '-5': 'rotate-[-5deg]',
+  '-4': 'rotate-[-4deg]',
   2: 'rotate-[2deg]',
   3: 'rotate-[3deg]',
 }
@@ -145,7 +145,7 @@ export default function ScrapbookSlide({ slide }) {
                   <Polaroid
                     src={ph.src}
                     rotate={ph.rotate}
-                    imgClass={i === 0 ? 'aspect-[3/4] object-cover object-top' : 'aspect-[4/3]'}
+                    imgClass={i === 0 ? 'aspect-[3/4] object-cover' : 'aspect-[4/3]'}
                   />
                 </div>
               ))}
