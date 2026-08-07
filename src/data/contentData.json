@@ -247,7 +247,14 @@
           ],
           "gallery": [
             "/media/movies/marvel/endgame.png",
-            "/media/movies/marvel/infinity-war.png"
+            "/media/movies/marvel/infinity-war.png",
+            "/media/movies/marvel/the-avengers.jpg",
+            "/media/movies/marvel/doctor-strange.jpg",
+            "/media/movies/marvel/captain-marvel.jpg",
+            "/media/movies/marvel/thor-ragnarok.jpg",
+            "/media/movies/marvel/black-panther.jpg",
+            "/media/movies/marvel/guardians-2.jpg",
+            "/media/movies/marvel/guardians-1.jpg"
           ]
         }
       ],
