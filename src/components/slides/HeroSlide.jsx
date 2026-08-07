@@ -3,6 +3,11 @@ import gsap from 'gsap'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { SlideSection } from './helpers'
 import content from '../../data/contentData.json'
+import StrokeText from '../StrokeText'
+import WarpText from '../WarpText'
+import GlowEffect from '../GlowEffect'
+
+const GLOW_COLORS = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F']
 
 const FLOATING_CHIPS = ['Tò mò', 'Công nghệ', 'Lập trình', 'AI', 'Kỹ thuật', 'Toán học (cái này hên xui)']
 const BG_SRC = '/images/background.png'
@@ -22,7 +27,26 @@ const HERO_IMG = '/images/hero-crop.png'
  *
  * Intro sequence: watermark name fades in → text block rises up → card slides up.
  */
-export default function HeroSlide({ slide, meta }) {
+// Word-wrap text at word boundaries for WarpText canvas rendering
+// WarpText splits only on \n, so we pre-insert line breaks
+function hardWrap(text, charsPerLine = 50) {
+  const words = text.split(' ')
+  const lines = []
+  let current = ''
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word
+    if (candidate.length > charsPerLine && current) {
+      lines.push(current)
+      current = word
+    } else {
+      current = candidate
+    }
+  }
+  if (current) lines.push(current)
+  return lines.join('\n')
+}
+
+export default function HeroSlide({ slide, meta, introDone }) {
   const sectionRef = useRef(null)
   const backNameRef = useRef(null)
   const textRef = useRef(null)
@@ -30,28 +54,71 @@ export default function HeroSlide({ slide, meta }) {
   const tiltRef = useRef(null)
   const shineRef = useRef(null)
 
-  // ── Intro sequence (plays once on load) ──────────────────────
+  // ── Apple-style Intro sequence (plays simultaneously as preloader curtain lifts) ─────
   useEffect(() => {
+    if (!introDone) return
+
     // Respect prefers-reduced-motion: show the final state instantly.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      ;[backNameRef, textRef, cardRef].forEach((r) => gsap.set(r.current, { opacity: 1, y: 0, scale: 1 }))
+      if (backNameRef.current) gsap.set(backNameRef.current, { opacity: 1, y: 0, scale: 1 })
+      if (textRef.current?.children) gsap.set(textRef.current.children, { opacity: 1, y: 0, scale: 1 })
+      if (cardRef.current) gsap.set(cardRef.current, { opacity: 1, y: 0, scale: 1 })
       return
     }
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-      tl.fromTo(backNameRef.current, { opacity: 0 }, { opacity: 1, duration: 1.1 }, 0.2)
-        .fromTo(
-          textRef.current,
-          { y: 28, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1 },
-          '-=0.5',
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } })
+
+      // 1. Watermark name background scale & fade in
+      if (backNameRef.current) {
+        tl.fromTo(
+          backNameRef.current,
+          { opacity: 0, scale: 1.08 },
+          { opacity: 1, scale: 1, duration: 1.2 },
+          0,
         )
-        .fromTo(cardRef.current, { y: 40 }, { y: 0, duration: 1 }, '-=0.7')
+      }
+
+      // 2. Apple-style staggered reveal for text elements (excluding h1 which StrokeText manages)
+      if (textRef.current?.children) {
+        // Filter out the h1 (index 1) — StrokeText handles its own animation
+        const children = Array.from(textRef.current.children).filter(
+          (el) => el.tagName !== 'H1',
+        )
+        tl.fromTo(
+          children,
+          { opacity: 0, y: 35, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            stagger: 0.08,
+            clearProps: 'transform,opacity',
+          },
+          0.02,
+        )
+      }
+
+      // 3. Apple-style photo card float up & scale in (right column)
+      if (cardRef.current) {
+        tl.fromTo(
+          cardRef.current,
+          { opacity: 0, y: 45, scale: 0.92 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            clearProps: 'transform,opacity',
+          },
+          0.08,
+        )
+      }
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [introDone])
 
   // ── 3D tilt: rotate the card toward the cursor ────────────────
   const handleMove = (e) => {
@@ -120,18 +187,82 @@ export default function HeroSlide({ slide, meta }) {
             ✦ Semi-pro Vibecoder · {meta.birthYear}
           </span>
 
-          <h1 className="font-display text-balance text-6xl font-bold leading-none tracking-tightest text-white sm:text-7xl lg:text-8xl">
-            {meta.displayName}
-          </h1>
+          {/* ANH THÔNG — StrokeText: only mounts (and triggers animation) after introDone */}
+          {introDone ? (
+            <h1 className="w-full font-display font-bold leading-none tracking-tightest text-white">
+              <StrokeText
+                text={meta.displayName}
+                strokeColor="#60A5FA"
+                fillColor="#ffffff"
+                strokeWidth={1.4}
+                drawDuration={1.0}
+                fillDelay={0.12}
+                stagger={0.04}
+                ease="power3.out"
+                trigger="mount"
+                fillMode="wipe"
+                fontSize={140}
+                fontWeight={800}
+                letterSpacing={-4}
+              />
+            </h1>
+          ) : (
+            <h1 className="font-display text-balance text-6xl font-bold leading-none tracking-tightest text-white sm:text-7xl lg:text-8xl">
+              {meta.displayName}
+            </h1>
+          )}
 
-          <p className="max-w-xl font-display text-xl font-semibold text-neutral-100 sm:text-2xl">
-            {slide.secondaryTitle}
-          </p>
+          {/* Khởi đầu từ sự tò mò — WarpText glass after intro, plain text during intro */}
+          {introDone ? (
+            <WarpText
+              text={slide.secondaryTitle}
+              color="#f3f4f6"
+              fontFamily="Space Grotesk, system-ui, sans-serif"
+              fontSize="2.5rem"
+              fontWeight={600}
+              letterSpacing="0em"
+              lineHeight={1.4}
+              textAlign="left"
+              warpStrength={0.06}
+              warpScale={1.5}
+              speed={0.4}
+              pointerInfluence={0.5}
+              pointerStrength={0.35}
+              refraction={0.014}
+              ripple
+              style={{ minHeight: 0, height: '3rem', maxWidth: '36rem' }}
+            />
+          ) : (
+            <p className="max-w-xl font-display text-xl font-semibold text-neutral-100 sm:text-2xl">
+              {slide.secondaryTitle}
+            </p>
+          )}
 
-          {/* intro paragraph — high contrast for readability */}
-          <p className="max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
-            {meta.shortIntro}
-          </p>
+          {/* intro paragraph — WarpText glass after intro, plain text during intro */}
+          {introDone ? (
+            <WarpText
+              text={hardWrap(meta.shortIntro, 58)}
+              color="#ffffff"
+              fontFamily="Space Grotesk, system-ui, sans-serif"
+              fontSize="1.05rem"
+              fontWeight={400}
+              letterSpacing="0em"
+              lineHeight={1.65}
+              textAlign="left"
+              warpStrength={0.02}
+              warpScale={1.4}
+              speed={0.3}
+              pointerInfluence={0.45}
+              pointerStrength={0.25}
+              refraction={0.004}
+              ripple
+              style={{ minHeight: 0, height: '11rem', maxWidth: '36rem' }}
+            />
+          ) : (
+            <p className="max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">
+              {meta.shortIntro}
+            </p>
+          )}
 
           {/* chips */}
           <div className="mt-2 flex max-w-xl flex-wrap gap-2.5">
@@ -145,23 +276,44 @@ export default function HeroSlide({ slide, meta }) {
             ))}
           </div>
 
-          {/* action buttons — large, high-contrast */}
-          <div className="mt-4 flex flex-wrap items-center gap-4">
-            <a href="#slide-orientation" className="btn-neon !px-8 !py-3.5 !text-[15px]">
-              Khám phá hành trình <ChevronDown size={17} />
-            </a>
-            <a
-              href={content.contact.find((c) => c.channel === 'GitHub')?.href}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-ghost group !px-7 !py-3.5 !text-[15px]"
-            >
-              GitHub →
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+          {/* action buttons — large, high-contrast, with animated glow ring */}
+          <div className="mt-4 flex flex-wrap items-center gap-5">
+            <div className="relative">
+              <GlowEffect
+                colors={GLOW_COLORS}
+                mode="colorShift"
+                blur="soft"
+                duration={3}
+                scale={0.9}
               />
-            </a>
+              <a
+                href="#slide-orientation"
+                className="btn-neon relative !px-8 !py-3.5 !text-[15px]"
+              >
+                Khám phá hành trình <ChevronDown size={17} />
+              </a>
+            </div>
+            <div className="relative">
+              <GlowEffect
+                colors={GLOW_COLORS}
+                mode="colorShift"
+                blur="soft"
+                duration={3}
+                scale={0.9}
+              />
+              <a
+                href={content.contact.find((c) => c.channel === 'GitHub')?.href}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost group relative !px-7 !py-3.5 !text-[15px]"
+              >
+                GitHub →
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
