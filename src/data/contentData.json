@@ -115,7 +115,9 @@
         { "name": "TypeScript", "level": "Đang phát triển", "logo": "/images/logos/typescript.svg" },
         { "name": "C++", "level": "Nền tảng thuật toán", "logo": "/images/logos/cplusplus.svg" },
         { "name": "Git / GitHub", "level": "Quản lý mã nguồn", "logo": "/images/logos/git.svg" },
-        { "name": "AI APIs", "level": "Thử nghiệm tích hợp" }
+        { "name": "AI APIs", "level": "Thử nghiệm tích hợp" },
+        { "name": "Node.js", "level": "Backend · Đang tìm hiểu", "logo": "/images/logos/nodejs.svg" },
+        { "name": "MongoDB", "level": "Cơ sở dữ liệu · Đang tìm hiểu", "logo": "/images/logos/mongodb.svg" }
       ],
       "formula": "Kỹ thuật × Công nghệ × Con người",
       "images": [

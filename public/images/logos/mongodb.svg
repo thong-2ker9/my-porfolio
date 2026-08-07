@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <!-- MongoDB leaf mark: three green petals fanning from the base -->
+  <g fill="#589636">
+    <ellipse cx="12" cy="12.2" rx="2.7" ry="8.4"/>
+    <ellipse cx="12" cy="12.6" rx="2.7" ry="8.2" transform="rotate(60 12 14)"/>
+    <ellipse cx="12" cy="12.6" rx="2.7" ry="8.2" transform="rotate(-60 12 14)"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <!-- Node.js hexagonal mark (brand green #339933) with white N -->
+  <path d="M12 1.6 21.4 7v10L12 22.4 2.6 17V7z" fill="#339933"/>
+  <path d="M8.4 16.2V7.8h3.05l2.55 4.35 2.55-4.35h2.1v8.4h-2.6v-5.15L13.55 16h-1.05L9.9 11.05v5.15z" fill="#ffffff"/>
+</svg>
