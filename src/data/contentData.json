@@ -6,7 +6,7 @@
     "role": "Học sinh lớp 12 · THPT Nguyễn Thị Minh Khai",
     "birthYear": 2009,
     "motto": "Tò mò để học. Học để làm. Làm để biết mình có thể trở thành ai.",
-    "shortIntro": "Xin chào tôi hiện là một học sinh lớp 12 với sự tò mò không ngừng về công nghệ, kỹ thuật và thế giới xung quanh — đang học cách biến sự tò mò thành kiến thức, kiến thức thành những thứ có thể tạo ra, và những thứ tạo ra thành một con đường cho tương lai.",
+    "shortIntro": "Xin chào,tôi tên là Văn Anh Thông hiện đang là một học sinh lớp 12 với sự tò mò không ngừng về công nghệ, kỹ thuật và thế giới xung quanh — đang học cách biến sự tò mò thành kiến thức, kiến thức thành những thứ có thể tạo ra, và những thứ tạo ra thành một con đường cho tương lai.",
     "primaryImage": "/images/hero-portrait.png"
   },
 
@@ -200,7 +200,14 @@
             "/media/movies/can-this-love/scene-2.png",
             "/media/movies/can-this-love/scene-3.png",
             "/media/movies/can-this-love/scene-4.png",
-            "/media/movies/can-this-love/scene-5.png"
+            "/media/movies/can-this-love/scene-5.png",
+            "/media/movies/can-this-love/scene-6.png",
+            "/media/movies/can-this-love/scene-7.png",
+            "/media/movies/can-this-love/scene-8.png",
+            "/media/movies/can-this-love/scene-9.png",
+            "/media/movies/can-this-love/scene-10.png",
+            "/media/movies/can-this-love/scene-11.png",
+            "/media/movies/can-this-love/scene-12.png"
           ]
         },
         {
@@ -448,8 +455,8 @@
       ],
       "games": [
         { "name": "Valorant", "logo": "/media/games/valorant.png", "tint": "#ff4655", "mono": true },
-        { "name": "Free Fire", "logo": "/media/games/free-fire.svg", "tint": "#ffba00" },
-        { "name": "Liên Quân Mobile", "logo": "/media/games/lien-quan.svg", "tint": "#d4af37" },
+        { "name": "Free Fire", "logo": "/media/games/free-fire.png", "tint": "#ffba00" },
+        { "name": "Liên Quân Mobile", "logo": "/media/games/lien-quan.png", "tint": "#d4af37" },
         { "name": "ZingSpeed", "logo": "/media/games/zingspeed.png", "tint": "#ff8c1a" },
         { "name": "Minecraft", "logo": "/media/games/minecraft.png", "tint": "#6bb23c" },
         { "name": "Roblox", "logo": "/media/games/roblox.png", "tint": "#e2231a" }
