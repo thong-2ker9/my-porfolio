@@ -14,7 +14,7 @@ export default function HeroQuoteSlide({ slide }) {
       <div className="absolute inset-0 bg-gradient-to-b from-space via-space/60 to-space" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,69,58,0.07),transparent_62%)]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center gap-10 px-6 py-28 text-center sm:px-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 px-6 py-24 text-center sm:px-10">
         <span data-reveal className="slide-label">
           {slide.num} — {slide.secondaryTitle}
         </span>

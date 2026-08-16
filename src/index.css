@@ -4,7 +4,12 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* NOTE: no `scroll-behavior: smooth` here on purpose — it makes Chrome
+       smooth-animate every programmatic scrollTo, which fights GSAP's
+       ScrollToPlugin (its autoKill sees the browser's own movement as a
+       user scroll and kills the tween after a couple of frames, so header
+       nav clicks never reach their slide). Smooth scrolling is applied
+       explicitly where needed (scrollIntoView/scrollBy with behavior). */
     background-color: #0a0a0c;
   }
 
@@ -74,7 +79,7 @@
   }
 
   .tag {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1 font-display text-[11px] font-medium uppercase tracking-[0.15em] text-body/80;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1 font-display text-xs font-medium uppercase tracking-[0.15em] text-body/80;
     transition: all 0.3s ease;
   }
 
@@ -84,7 +89,7 @@
   }
 
   .slide-label {
-    @apply font-display text-[11px] font-semibold uppercase tracking-[0.25em] text-body/50;
+    @apply font-display text-xs font-semibold uppercase tracking-[0.2em] text-body/50;
   }
 }
 
@@ -107,6 +112,39 @@
     .animate-fadeUp {
       animation: none;
     }
+  }
+}
+
+/* ── Slide doodles — faint thin-line stickers in negative space ── */
+.slide-doodles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  animation: doodle-float var(--d-dur, 16s) ease-in-out infinite;
+  animation-delay: var(--d-delay, 0s);
+  will-change: transform;
+}
+
+@keyframes doodle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--d-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(calc(var(--d-rot, 0deg) + 5deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doodle {
+    animation: none;
   }
 }
 
@@ -138,5 +176,71 @@
 @media (prefers-reduced-motion: reduce) {
   .word-in {
     animation: none;
+  }
+}
+
+/* Keeps Hero actions inside the first viewport on short desktop displays. */
+@media (min-width: 1024px) and (max-height: 800px) {
+  .hero-layout {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-intro-warp {
+    height: 9.5rem !important;
+  }
+}
+
+/* ── Classics cards: mouse-tracking spotlight ───────────────────── */
+.classic-card {
+  --mx: 50%;
+  --my: 50%;
+}
+
+.classic-spot {
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(37, 99, 235, 0.22),
+    transparent 70%
+  );
+}
+
+/* ── Classics cards: shine sweep on hover ───────────────────────── */
+.classic-shine {
+  top: 0;
+  bottom: 0;
+  left: -75%;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.09),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.classic-card:hover .classic-shine {
+  opacity: 1;
+  animation: classic-shine-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes classic-shine-sweep {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classic-card:hover .classic-shine {
+    animation: none;
+    opacity: 0;
+  }
+  .classic-spot {
+    display: none;
   }
 }

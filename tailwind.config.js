@@ -10,12 +10,21 @@ export default {
         accent: '#2563EB', // Signal blue — CTA / active (10%)
         cyber: '#60A5FA', // Soft blue — tags / hovers
         body: '#E4E4E9', // body text, never pure white
+        // ── Personal-archive (sưu tầm) section: warm amber accent ──
+        gold: '#D99A4E', // amber — the archive's single accent
+        'gold-dim': 'rgba(217,154,78,0.12)', // amber wash for hover/active
+        'archive-surface': '#131316', // archive panel background
+        'archive-hover': '#17171B', // archive panel hover
+        ink: '#F3F1EC', // warm ivory text (never pure white)
+        'ink-muted': '#918E88', // secondary archive text
       },
       // ── Style Guide: Typography ─────────────────────────────────
       fontFamily: {
         display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         hand: ['"Caveat"', 'cursive'],
+        serif: ['Fraunces', 'Georgia', 'serif'], // archive display serif
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'], // catalog labels
       },
       // ── Style Guide: UI specs (restrained radii) ────────────────
       borderRadius: {

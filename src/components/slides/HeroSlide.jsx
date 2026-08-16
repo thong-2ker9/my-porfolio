@@ -1,13 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { SlideSection } from './helpers'
 import content from '../../data/contentData.json'
+import { useLanguage } from '../../i18n/LanguageProvider'
 import StrokeText from '../StrokeText'
 import WarpText from '../WarpText'
-import GlowEffect from '../GlowEffect'
-
-const GLOW_COLORS = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F']
+import { GlowEffect } from '../GlowEffect'
 
 const FLOATING_CHIPS = ['Tò mò', 'Công nghệ', 'Lập trình', 'AI', 'Kỹ thuật', 'Toán học (cái này hên xui)']
 const BG_SRC = '/images/background.png'
@@ -28,8 +27,16 @@ const HERO_IMG = '/images/hero-crop.png'
  * Intro sequence: watermark name fades in → text block rises up → card slides up.
  */
 // Word-wrap text at word boundaries for WarpText canvas rendering
-// WarpText splits only on \n, so we pre-insert line breaks
+// WarpText splits only on \n, so we pre-insert line breaks.
+// CJK scripts (Chinese/Japanese/Korean) don't use spaces — chunk by
+// character count instead so the canvas text still wraps.
 function hardWrap(text, charsPerLine = 50) {
+  if (!text) return text
+  if (!text.includes(' ')) {
+    const lines = []
+    for (let i = 0; i < text.length; i += 40) lines.push(text.slice(i, i + 40))
+    return lines.join('\n')
+  }
   const words = text.split(' ')
   const lines = []
   let current = ''
@@ -46,17 +53,24 @@ function hardWrap(text, charsPerLine = 50) {
   return lines.join('\n')
 }
 
-export default function HeroSlide({ slide, meta, introDone }) {
+export default function HeroSlide({ slide, meta, introDone, replaySignal = 0 }) {
+  const { t } = useLanguage()
   const sectionRef = useRef(null)
   const backNameRef = useRef(null)
   const textRef = useRef(null)
   const cardRef = useRef(null)
   const tiltRef = useRef(null)
   const shineRef = useRef(null)
+  const ctxsRef = useRef([])
 
-  // ── Apple-style Intro sequence (plays simultaneously as preloader curtain lifts) ─────
-  useEffect(() => {
-    if (!introDone) return
+  // ── Apple-style Intro sequence ──────────────────────────────────
+  // Plays when the preloader curtain lifts, and replays (fresh, never delayed)
+  // every time the header's "Giới thiệu" is clicked — App bumps `replaySignal`
+  // once the smooth-scroll lands on slide 1.
+  const playIntro = useCallback(() => {
+    // Revert any previous run so a replay restarts cleanly (kills running tweens).
+    ctxsRef.current.forEach((c) => c.revert())
+    ctxsRef.current = []
 
     // Respect prefers-reduced-motion: show the final state instantly.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -116,9 +130,25 @@ export default function HeroSlide({ slide, meta, introDone }) {
         )
       }
     }, sectionRef)
+    ctxsRef.current.push(ctx)
+  }, [])
 
-    return () => ctx.revert()
-  }, [introDone])
+  // Initial play — right as the preloader curtain lifts.
+  useEffect(() => {
+    if (!introDone) return
+    playIntro()
+  }, [introDone, playIntro])
+
+  // Replay — each time the user navigates back to slide 1 from the header nav.
+  useEffect(() => {
+    if (!introDone || replaySignal === 0) return
+    playIntro()
+  }, [introDone, replaySignal, playIntro])
+
+  // Cleanup on unmount.
+  useEffect(() => () => {
+    ctxsRef.current.forEach((c) => c.revert())
+  }, [])
 
   // ── 3D tilt: rotate the card toward the cursor ────────────────
   const handleMove = (e) => {
@@ -148,13 +178,17 @@ export default function HeroSlide({ slide, meta, introDone }) {
     if (shineRef.current) shineRef.current.style.background = ''
   }
 
-  const scrollToNext = () => {
-    const next = document.getElementById('slide-orientation')
-    if (next) gsap.to(window, { scrollTo: { y: next }, duration: 1, ease: 'power3.inOut' })
+  // Explicit smooth scroll — the page no longer relies on CSS
+  // `scroll-behavior: smooth` (it fought GSAP's ScrollToPlugin), so native
+  // jumps get their own smoothing here.
+  const smoothScrollTo = (el) => {
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const scrollToNext = () => smoothScrollTo(document.getElementById('slide-orientation'))
+
   return (
-    <SlideSection id={slide.id} num={slide.num} className="flex items-center">
+    <SlideSection ref={sectionRef} id={slide.id} num={slide.num} className="flex items-center">
       {/* wallpaper background */}
       <img
         src={BG_SRC}
@@ -170,26 +204,26 @@ export default function HeroSlide({ slide, meta, introDone }) {
       <span
         ref={backNameRef}
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap font-display text-[clamp(6.5rem,23vw,25rem)] font-extrabold leading-none text-white/[0.06]"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap font-display text-[clamp(6.5rem,23vw,25rem)] font-extrabold leading-none text-white/[0.04]" //chữ ANH THONG bự bự phía sau và phía trước background
         style={{ letterSpacing: '-0.04em' }}
       >
         {meta.displayName}
       </span>
 
       {/* ── Layout: text 2/5 (left) · photo card 3/5 (right) ──── */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,20vw)] lg:items-center lg:gap-8 lg:py-24">
+      <div className="hero-layout relative z-10 mx-auto grid w-full max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,20vw)] lg:items-center lg:gap-8 lg:py-24">
         {/* left — editorial text */}
         <div
           ref={textRef}
-          className="flex flex-col items-start gap-6 text-left"
+          className="hero-copy flex flex-col items-start gap-4 text-left"
         >
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 font-display text-[11px] font-medium uppercase tracking-[0.15em] text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-accent/60 hover:text-accent">
-            ✦ Semi-pro Vibecoder · {meta.birthYear}
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 font-display text-xs font-medium uppercase tracking-[0.15em] text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-accent/60 hover:text-accent">
+            ✦ {t('Semi-pro Vibecoder')} · {meta.birthYear}
           </span>
 
           {/* ANH THÔNG — StrokeText: only mounts (and triggers animation) after introDone */}
           {introDone ? (
-            <h1 className="w-full font-display font-bold leading-none tracking-tightest text-white">
+            <h1 className="w-full -translate-x-10 font-display font-bold leading-none tracking-tightest text-white">
               <StrokeText
                 text={meta.displayName}
                 strokeColor="#60A5FA"
@@ -244,10 +278,10 @@ export default function HeroSlide({ slide, meta, introDone }) {
               text={hardWrap(meta.shortIntro, 58)}
               color="#ffffff"
               fontFamily="Space Grotesk, system-ui, sans-serif"
-              fontSize="1.05rem"
-              fontWeight={400}
+              fontSize="1.15rem"
+              fontWeight={500}
               letterSpacing="0em"
-              lineHeight={1.65}
+              lineHeight={1.6}
               textAlign="left"
               warpStrength={0.02}
               warpScale={1.4}
@@ -256,6 +290,7 @@ export default function HeroSlide({ slide, meta, introDone }) {
               pointerStrength={0.25}
               refraction={0.004}
               ripple
+              className="hero-intro-warp"
               style={{ minHeight: 0, height: '11rem', maxWidth: '36rem' }}
             />
           ) : (
@@ -265,47 +300,48 @@ export default function HeroSlide({ slide, meta, introDone }) {
           )}
 
           {/* chips */}
-          <div className="mt-2 flex max-w-xl flex-wrap gap-2.5">
+          <div className="flex max-w-xl flex-wrap gap-2 lg:max-w-none">
             {FLOATING_CHIPS.map((c) => (
               <span
                 key={c}
                 className="rounded-full border border-white/20 bg-white/[0.08] px-4 py-1.5 font-display text-xs font-medium text-neutral-100 backdrop-blur-sm transition-all duration-300 hover:border-accent/60 hover:text-accent"
               >
-                {c}
+                {t(c)}
               </span>
             ))}
           </div>
 
-          {/* action buttons — large, high-contrast, with animated glow ring */}
-          <div className="mt-4 flex flex-wrap items-center gap-5">
-            <div className="relative">
+          {/* action buttons — large, high-contrast with GlowEffect */}
+          <div className="mt-1 flex flex-wrap items-center gap-3">
+            <div className="relative inline-flex rounded-full">
               <GlowEffect
-                colors={GLOW_COLORS}
-                mode="colorShift"
-                blur="soft"
-                duration={3}
-                scale={0.9}
+                colors={['#0894FF', '#C959DD', '#FF2E54', '#FF9004']}
+                mode="static"
+                blur="medium"
               />
               <a
                 href="#slide-orientation"
-                className="btn-neon relative !px-8 !py-3.5 !text-[15px]"
+                onClick={(e) => {
+                  e.preventDefault()
+                  smoothScrollTo(document.getElementById('slide-orientation'))
+                }}
+                className="relative z-10 btn-neon !px-8 !py-3.5 !text-[15px]"
               >
-                Khám phá hành trình <ChevronDown size={17} />
+                {t('Khám phá về tuii')} ↓↓↓ <ChevronDown size={17} />
               </a>
             </div>
-            <div className="relative">
+
+            <div className="relative inline-flex rounded-full">
               <GlowEffect
-                colors={GLOW_COLORS}
-                mode="colorShift"
-                blur="soft"
-                duration={3}
-                scale={0.9}
+                colors={['#0894FF', '#C959DD', '#FF2E54', '#FF9004']}
+                mode="static"
+                blur="medium"
               />
               <a
                 href={content.contact.find((c) => c.channel === 'GitHub')?.href}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-ghost group relative !px-7 !py-3.5 !text-[15px]"
+                className="relative z-10 btn-ghost group !px-7 !py-3.5 !text-[15px] bg-space/90"
               >
                 GitHub →
                 <ArrowRight
@@ -362,9 +398,9 @@ export default function HeroSlide({ slide, meta, introDone }) {
                     <p className="font-display text-base font-bold leading-tight text-white">
                       {meta.displayName}
                     </p>
-                    <p className="truncate text-[11px] text-white/75" title={meta.role}>{meta.role}</p>
+                    <p className="truncate text-xs text-white/75" title={meta.role}>{meta.role}</p>
                   </div>
-                  <span className="shrink-0 rounded-full border border-white/20 bg-black/35 px-2.5 py-1 font-display text-[9px] font-medium uppercase tracking-[0.15em] text-white/85 backdrop-blur-md">
+                  <span className="shrink-0 rounded-full border border-white/20 bg-black/35 px-2.5 py-1 font-display text-[10px] font-medium uppercase tracking-[0.14em] text-white/85 backdrop-blur-md">
                     ✦ Ben · {meta.birthYear}
                   </span>
                 </div>
@@ -378,7 +414,7 @@ export default function HeroSlide({ slide, meta, introDone }) {
       <button
         onClick={scrollToNext}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/50 transition-all duration-300 hover:translate-y-0.5 hover:text-accent"
-        aria-label="Cuộn xuống"
+        aria-label={t('Cuộn xuống')}
       >
         <ChevronDown size={22} />
       </button>

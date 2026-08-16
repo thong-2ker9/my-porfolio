@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { ExternalLink, Facebook, Gamepad2, Globe, Users, Youtube } from 'lucide-react'
 import { SlideSection, SlideHeader, Highlights, Body } from './helpers'
+import SlideDoodles from './SlideDoodles'
+import { useLanguage } from '../../i18n/LanguageProvider'
 
 const HEX6 = /^#[0-9a-f]{6}$/i
 
@@ -20,24 +22,35 @@ function LinkIcon({ name }) {
  * color marks via CSS mask, so every tile pops against the dark background.
  */
 export default function InfluencesSlide({ slide }) {
+  const { t } = useLanguage()
   const photos = slide.images || []
   const games = slide.games || []
   const influencers = slide.influencers || []
   const [activeName, setActiveName] = useState(influencers[0]?.name ?? null)
   const active = influencers.find((i) => i.name === activeName) || influencers[0]
   const detailRef = useRef(null)
+  const firstRender = useRef(true)
 
-  // Keep the detail panel visible after switching influencers
+  // Keep the detail panel visible after switching influencers — but never on
+  // the initial mount. That first run would scrollIntoView the page to the
+  // bottom of the site on load (the preloader's overflow lock masks it, but it
+  // is a latent page-jump waiting to happen).
   useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
     const el = detailRef.current
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [activeName])
 
   return (
-    <SlideSection id={slide.id} num={slide.num} className="flex items-center py-24">
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-start gap-12 px-6 sm:px-10 lg:grid-cols-2 lg:gap-10">
+    <SlideSection id={slide.id} num={slide.num} className="flex items-center py-16 sm:py-20">
+      {/* faint people/game stickers in the empty corners */}
+      <SlideDoodles theme={slide.id} />
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-start gap-10 px-6 sm:px-10 lg:grid-cols-2 lg:gap-8">
         {/* ── Left: intro + influencers ── */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-6">
           <SlideHeader
             num={slide.num}
             primaryTitle={slide.primaryTitle}
@@ -48,7 +61,7 @@ export default function InfluencesSlide({ slide }) {
 
           <div data-reveal className="panel p-6 shadow-card">
             <p className="flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              <Users size={14} /> Những người truyền cảm hứng
+              <Users size={14} /> {t('Những người truyền cảm hứng')}
             </p>
             <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {influencers.map((inf) => {
@@ -78,7 +91,7 @@ export default function InfluencesSlide({ slide }) {
                     )}
                     <div className="min-w-0">
                       <p className="truncate font-display text-sm font-semibold text-white">{inf.name}</p>
-                      <p className="text-[11px] text-body/55">{inf.role}</p>
+                      <p className="text-xs text-body/55">{inf.role}</p>
                     </div>
                   </button>
                 )
@@ -127,7 +140,7 @@ export default function InfluencesSlide({ slide }) {
                     ))}
                   </div>
                 ) : (
-                  <p className="mt-4 text-xs italic text-body/45">Hiện chưa có liên kết mạng xã hội.</p>
+                  <p className="mt-4 text-xs italic text-body/45">{t('Hiện chưa có liên kết mạng xã hội.')}</p>
                 )}
               </div>
             )}
@@ -135,9 +148,9 @@ export default function InfluencesSlide({ slide }) {
         </div>
 
         {/* ── Right: photo grid (top) + games (below) ── */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-8">
           {/* Bento photo wall — 2×2 block filling the top-right quarter of the slide */}
-          <div data-reveal className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div data-reveal className="grid grid-cols-2 gap-3">
             {photos.map((p, i) => (
               <figure
                 key={p.src}
@@ -145,7 +158,7 @@ export default function InfluencesSlide({ slide }) {
               >
                 <img
                   src={p.src}
-                  alt={p.alt || `Sở thích & đam mê của Anh Thông — ảnh ${i + 1}`}
+                  alt={p.alt || `${t('Sở thích & đam mê của Anh Thông — ảnh')} ${i + 1}`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
                 />
@@ -156,9 +169,9 @@ export default function InfluencesSlide({ slide }) {
           {/* Game đã chơi — glass cards */}
           <div data-reveal className="flex flex-col gap-5">
             <p className="flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              <Gamepad2 size={14} /> Các tựa Game đã từng chơi
+              <Gamepad2 size={14} /> {t('Các tựa Game đã từng chơi')}
             </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {games.map((g) => {
                 const tint = HEX6.test(g.tint || '') ? g.tint : '#2563eb'
                 return (
@@ -202,7 +215,7 @@ export default function InfluencesSlide({ slide }) {
               })}
             </div>
             {slide.gamesNote && (
-              <p className="text-[11px] italic text-body/45">{slide.gamesNote}</p>
+              <p className="text-xs italic text-body/45">{slide.gamesNote}</p>
             )}
           </div>
         </div>

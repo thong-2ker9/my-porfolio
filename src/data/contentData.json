@@ -20,8 +20,8 @@
     },
     {
       "channel": "LinkedIn",
-      "value": "anh-thông-v-330a69418",
-      "href": "https://www.linkedin.com/in/anh-th%C3%B4ng-v-330a69418/",
+      "value": "anh-thong-van",
+      "href": "https://www.linkedin.com/in/anh-thong-van/",
       "highlight": true,
       "note": "Điểm nhấn"
     },
@@ -98,7 +98,7 @@
       "secondaryTitle": "Điểm giao thoa giữa Kỹ thuật, Công nghệ và Con người",
       "body": [
         "Trong học tập, Anh Thông đặc biệt yêu thích Toán học và có định hướng tìm hiểu các lĩnh vực thiên về kỹ thuật, kỹ sư, công nghệ và nghiên cứu ứng dụng.",
-        "Anh không xem lập trình là mục tiêu nghề nghiệp cuối cùng. Thay vào đó, lập trình là một công cụ giúp anh biến ý tưởng thành sản phẩm, thử nghiệm những điều mình tò mò và hiểu sâu hơn về công nghệ."
+        "Anh Thông không xem lập trình là mục tiêu nghề nghiệp cuối cùng. Thay vào đó, lập trình là một công cụ giúp anh biến ý tưởng thành sản phẩm, thử nghiệm những điều mình tò mò và hiểu sâu hơn về công nghệ."
       ],
       "highlights": [
         "Mục tiêu: Các lĩnh vực kỹ thuật, kỹ sư và nghiên cứu ứng dụng.",
@@ -107,9 +107,9 @@
       ],
       "tech": [
         { "name": "Python", "level": "Đang phát triển", "logo": "/images/logos/python.svg" },
-        { "name": "HTML", "level": "Tự học từ lớp 10", "logo": "/images/logos/html5.svg" },
-        { "name": "CSS", "level": "Tự học từ lớp 10", "logo": "/images/logos/css3.svg" },
-        { "name": "JavaScript", "level": "Tự học từ lớp 10", "logo": "/images/logos/javascript.svg" },
+        { "name": "HTML", "level": "Đang phát triển", "logo": "/images/logos/html5.svg" },
+        { "name": "CSS", "level": "Đang phát triển", "logo": "/images/logos/css3.svg" },
+        { "name": "JavaScript", "level": "Đang phát triển", "logo": "/images/logos/javascript.svg" },
         { "name": "JSX", "level": "React", "logo": "/images/logos/react.svg" },
         { "name": "TSX", "level": "TypeScript", "logo": "/images/logos/typescript.svg" },
         { "name": "TypeScript", "level": "Đang phát triển", "logo": "/images/logos/typescript.svg" },
@@ -174,7 +174,7 @@
       "secondaryTitle": "Về các bộ phim yêu thích",
       "body": [
         "Từ những thước phim trong cuộc sống thì:",
-        "Bên dưới là 3 bộ phim ấn tượng nhất — nhấn vào poster để xem thông tin chi tiết của từng phim."
+        "Bên dưới là 7 bộ phim ấn tượng nhất — nhấn vào poster để xem thông tin chi tiết của từng phim."
       ],
       "highlights": [
         "Phim ảnh đa dạng: Từ lãng mạn (Hôn lễ của em) đến bom tấn, kinh điển (The Godfather, The Matrix, Marvel).",
@@ -186,7 +186,7 @@
           "title": "Can This Love Be Translated?",
           "tag": "Phim lãng mạn · Hàn Quốc",
           "poster": "/media/movies/can-this-love/poster.png",
-          "desc": "Bộ phim tình cảm Hàn Quốc nhẹ nhàng về một diễn viên nói được bốn thứ tiếng và cô phiên dịch viên — những cảm xúc được 'dịch' qua ngôn ngữ của trái tim. Đúng gu lãng mạn mà Anh Thông yêu thích. Thề phim này với giờ vẫn lụy couple papago=))))",
+          "desc": "Bộ phim tình cảm Hàn Quốc nhẹ nhàng về một diễn viên nói được bốn thứ tiếng và cô phiên dịch viên — những cảm xúc được 'dịch' qua ngôn ngữ của trái tim. Thề phim này với giờ vẫn lụy couple papago=))))",
           "facts": [
             "Thể loại: Tình cảm · Hài · Lãng mạn",
             "Quốc gia: Hàn Quốc (tvN) · 12 tập",
@@ -215,7 +215,7 @@
           "title": "Hôn lễ của em",
           "tag": "Phim tình cảm · Trung Quốc",
           "poster": "/media/movies/hon-le/poster.png",
-          "desc": "Phim điện ảnh Trung Quốc 'Your Wedding' (2021) — mối tình đầu kéo dài 15 năm của chàng vận động viên bơi lội và cô bạn thời trung học: ngọt ngào, tiếc nuối nhưng rất thật.",
+          "desc": "Phim điện ảnh Trung Quốc 'Your Wedding' (2021) — mối tình đầu kéo dài 15 năm của chàng vận động viên bơi lội và cô bạn thời trung học: ngọt ngào, tiếc nuối nhưng rất thật. Thề phim này cũng vừa lụy vừa buồn không kém=((( ",
           "facts": [
             "Thể loại: Tình cảm · Hài",
             "Quốc gia: Trung Quốc",
@@ -237,7 +237,7 @@
           "title": "Marvel — Vũ trụ Điện ảnh",
           "tag": "Bom tấn siêu anh hùng",
           "poster": "/media/movies/marvel/endgame.png",
-          "desc": "Hành trình vĩ đại nhất của Vũ trụ Điện ảnh Marvel (MCU) — từ cuộc chiến chống Thanos trong Avengers: Infinity War đến màn hạ màn xúc động của Avengers: Endgame.",
+          "desc": "Hành trình vĩ đại nhất của Vũ trụ Điện ảnh Marvel (MCU) — từ cuộc chiến chống Thanos trong Avengers: Infinity War đến màn hạ màn xúc động của Avengers: Endgame. Phim này absolute cinema rồi=)))) không cần bàn cãi...",
           "facts": [
             "Thể loại: Hành động · Siêu anh hùng",
             "Avengers: Endgame (2019) — đạo diễn anh em Russo",
@@ -256,29 +256,157 @@
             "/media/movies/marvel/guardians-2.jpg",
             "/media/movies/marvel/guardians-1.jpg"
           ]
+        },
+        {
+          "id": "wolf-of-wall-street",
+          "title": "The Wolf of Wall Street — Sói già phố Wall",
+          "tag": "Phim tiểu sử · Hài đen",
+          "poster": "/media/movies/wolf-of-wall-street/poster.png",
+          "desc": "Câu chuyện có thật về Jordan Belfort — từ cậu nhân viên môi giới quèn sau cú sập Phố Wall 1987 vươn lên thành ông trùm chứng khoán với công ty Stratton Oakmont. Tiền, thuốc, tiệc tùng và cả FBI bám sát — bộ phim hài đen đỉnh cao của Scorsese, xem xong vẫn khó tin đây là chuyện thật=))))",
+          "facts": [
+            "Thể loại: Tiểu sử · Hài đen · Tội phạm",
+            "The Wolf of Wall Street (2013) — đạo diễn Martin Scorsese",
+            "Dựa trên hồi ký có thật của Jordan Belfort",
+            "Doanh thu ≈ 407 triệu USD — phim ăn khách nhất của Scorsese",
+            "Dàn sao: Leonardo DiCaprio, Jonah Hill, Margot Robbie",
+            "5 đề cử Oscar · Guinness kỷ lục 569 lần chửi thề"
+          ],
+          "gallery": [
+            "/media/movies/wolf-of-wall-street/scene-1.png",
+            "/media/movies/wolf-of-wall-street/scene-2.jpg",
+            "/media/movies/wolf-of-wall-street/scene-3.png",
+            "/media/movies/wolf-of-wall-street/scene-4.png",
+            "/media/movies/wolf-of-wall-street/poster-official.png"
+          ]
+        },
+        {
+          "id": "avatar",
+          "title": "Avatar — Vũ trụ Pandora",
+          "tag": "Bom tấn khoa học viễn tưởng",
+          "poster": "/media/movies/avatar/poster-main.jpg",
+          "desc": "Bom tấn khoa học viễn tưởng của James Cameron đưa khán giả đến Pandora — hành tinh xanh của người Na'vi. Từ Avatar (2009) mở ra kỷ nguyên phim 3D đến Avatar: Dòng chảy của nước (2022), cả hai đều đứng top doanh thu mọi thời đại. Phim này xem là nghiện luôn, đồ họa đỉnh của đỉnh=))))",
+          "facts": [
+            "Thể loại: Khoa học viễn tưởng · Sử thi · Phiêu lưu",
+            "Avatar (2009) — đạo diễn James Cameron",
+            "Avatar: Dòng chảy của nước (2022) — phần tiếp theo",
+            "Doanh thu Avatar ≈ 2,9 tỷ USD — phim ăn khách nhất lịch sử",
+            "Dàn sao: Sam Worthington, Zoe Saldaña, Sigourney Weaver, Stephen Lang..."
+          ],
+          "gallery": [
+            "/media/movies/avatar/poster-2.jpg",
+            "/media/movies/avatar/poster-wayofwater.jpg",
+            "/media/movies/avatar/poster-wayofwater-vn.jpg",
+            "/media/movies/avatar/scene-1.jpg",
+            "/media/movies/avatar/scene-2.jpg",
+            "/media/movies/avatar/scene-3.jpg",
+            "/media/movies/avatar/scene-4.jpg",
+            "/media/movies/avatar/scene-5.jpg"
+          ]
+        },
+        {
+          "id": "star-wars",
+          "title": "Star Wars — Chiến tranh giữa các vì sao",
+          "tag": "Sử thi không gian huyền thoại",
+          "poster": "/media/movies/star-wars/poster-4.jpg",
+          "desc": "Bộ sử thi không gian của George Lucas — nơi Thần lực (The Force), thanh gươm ánh sáng và cuộc chiến Jedi vs Sith làm say đắm cả thế giới từ năm 1977. Chín phần phim chính kéo dài qua ba thời kỳ, mở ra kỷ nguyên phim bom tấn hiện đại. Phim cũ mà xem vẫn cuốn cực kỳ=)) May the Force be with you!",
+          "facts": [
+            "Thể loại: Khoa học viễn tưởng · Sử thi không gian",
+            "George Lucas sáng tạo từ 1977 — bộ ba gốc (Tập IV–VI)",
+            "9 phần phim chính (Skywalker Saga) + các phim ngoại truyện",
+            "Tổng doanh thu hơn 10,7 tỷ USD",
+            "Dàn sao: Mark Hamill, Harrison Ford, Carrie Fisher, Hayden Christensen, Daisy Ridley..."
+          ],
+          "gallery": [
+            "/media/movies/star-wars/poster.jpg",
+            "/media/movies/star-wars/poster-2.jpg",
+            "/media/movies/star-wars/poster-3.jpg"
+          ]
+        },
+        {
+          "id": "harry-potter",
+          "title": "Harry Potter — Vũ trụ phép thuật",
+          "tag": "Giả tưởng phép thuật kinh điển",
+          "poster": "/media/movies/harry-potter/poster-main.jpg",
+          "desc": "Bộ phim gắn liền tuổi thơ của biết bao thế hệ — cậu bé phù thủy Harry Potter và hành trình 8 phần phim từ Hòn đá Phù thủy đến Bảo bối Tử thần. Thế giới phép thuật của J. K. Rowling hiện lên sống động: Hogwarts, phép thuật, tình bạn và cuộc chiến chống Chúa tể Voldemort. Giờ xem lại vẫn thấy thần kỳ như lần đầu=))) Expecto Patronum!",
+          "facts": [
+            "Thể loại: Giả tưởng phép thuật · Phiêu lưu",
+            "8 phần phim từ 2001–2011, dựa trên tiểu thuyết J. K. Rowling",
+            "Đạo diễn: Chris Columbus, Alfonso Cuarón, Mike Newell, David Yates",
+            "Tổng doanh thu hơn 7,7 tỷ USD",
+            "Dàn sao: Daniel Radcliffe, Emma Watson, Rupert Grint, Alan Rickman..."
+          ],
+          "gallery": [
+            "/media/movies/harry-potter/poster-2.jpg",
+            "/media/movies/harry-potter/poster-3.jpg",
+            "/media/movies/harry-potter/scene-1.jpg",
+            "/media/movies/harry-potter/scene-2.jpg",
+            "/media/movies/harry-potter/scene-3.jpg",
+            "/media/movies/harry-potter/scene-4.jpg"
+          ]
         }
       ],
       "classics": [
         {
           "title": "The Matrix",
+          "tag": "1999 · Sci-Fi Classic",
           "image": "/media/movies/the-matrix.png",
-          "desc": "Kinh điển khoa học viễn tưởng — câu hỏi về thực tại và tự do."
+          "desc": "Cú bẻ lái tư duy vĩ đại nhất của điện ảnh viễn tưởng — lựa chọn giữa viên thuốc xanh và viên thuốc đỏ, khiến mình luôn suy ngẫm về thế giới thực tại và góc nhìn lập trình."
         },
         {
           "title": "The Godfather",
+          "tag": "1972 · Cinema Masterpiece",
           "image": "/media/movies/the-godfather.png",
-          "desc": "Kiệt tác điện ảnh về gia đình, quyền lực và sự lựa chọn."
+          "desc": "Bản hùng ca bất hủ về gia đình, uy quyền và nguyên tắc — một kiệt tác cho mình bài học sâu sắc về sự điềm tĩnh và bản lĩnh của người trưởng thành."
+        },
+        {
+          "title": "Oppenheimer",
+          "tag": "2023 · Kiệt tác lịch sử",
+          "image": "/media/movies/oppenheimer.jpg",
+          "fav": true,
+          "desc": "Kiệt tác tiểu sử của Christopher Nolan về 'cha đẻ bom nguyên tử' J. Robert Oppenheimer — cuộc chiến nội tâm giữa thiên tài và tội lỗi, giữa khoa học và chính trị. Cillian Murphy toả sáng rực rỡ, phim quét sạch 7 giải Oscar. Đây là một trong hai bộ phim hay nhất mình từng xem=))))"
+        },
+        {
+          "title": "Interstellar",
+          "tag": "2014 · Hố đen tử thần",
+          "image": "/media/movies/interstellar.jpg",
+          "fav": true,
+          "desc": "Chuyến du hành vượt không – thời gian của Christopher Nolan, nơi tình yêu vượt qua cả chiều không gian thứ 5. Đồng hồ trên hành tinh Miller, hố đen Gargantua và câu 'Do not go gentle into that good night' — bộ phim khoa học viễn tưởng hay nhất với mình, xem bao nhiêu lần vẫn nổi da gà=)))"
+        },
+        {
+          "title": "The Lord of the Rings: Hiệp hội Nhẫn thần",
+          "tag": "2001 · Kỳ quan giả tưởng",
+          "image": "/media/movies/lord-of-the-rings.jpg",
+          "desc": "Khởi đầu của bộ ba huyền thoại do Peter Jackson chuyển thể từ tiểu thuyết J. R. R. Tolkien — hành trình mang Chiếc Nhẫn đến Núi Diệt Vong cùng 9 thành viên Hiệp Hội. Quay tại New Zealand, thắng 4 giải Oscar, là nơi mình học được ý nghĩa của tình bạn và lòng dũng cảm=))"
+        },
+        {
+          "title": "Finding Nemo",
+          "tag": "2003 · Hoạt hình Pixar",
+          "image": "/media/movies/finding-nemo.jpg",
+          "desc": "Chú cá hề Marlin băng qua cả đại dương để tìm lại con trai Nemo cùng Dory — nàng cá hay quên đáng yêu nhất lịch sử. Bộ phim hoạt hình đầu tiên của Pixar giành Oscar, vừa hài vừa xúc động, dạy mình rằng hãy 'cứ tiếp tục bơi'=)))) Just keep swimming!"
+        },
+        {
+          "title": "Money Heist — Phi vụ triệu đô",
+          "tag": "2017 · Bom tấn Netflix",
+          "image": "/media/movies/money-heist.png",
+          "desc": "Vụ cướp Xưởng in tiền Hoàng gia Tây Ban Nha dưới bàn tay điều phối thiên tài của Giáo sư — 8 thành viên mang mặt nạ Dalí đối đầu với lực lượng cảnh sát. Loạt phim Tây Ban Nha làm mưa làm gió toàn cầu trên Netflix, với 'Bella Ciao' trở thành bản hit phản kháng. Kịch tính, thông minh và khó rời mắt cực kỳ=)))"
+        },
+        {
+          "title": "The Social Network — Mạng xã hội",
+          "tag": "2010 · Huyền thoại thời đại số",
+          "image": "/media/movies/the-social-network.jpg",
+          "desc": "Câu chuyện ra đời của Facebook dưới bàn tay Mark Zuckerberg — David Fincher đạo diễn với kịch bản đối thoại cực nhanh của Aaron Sorkin, Jesse Eisenberg hoá thân xuất sắc. Bộ phim về thiên tài lập trình tạo ra mạng lưới kết nối cả thế giới nhưng lại đánh mất người bạn thân nhất — cảnh viết code qua đêm trong ký túc xá Harvard là thứ khiến dân lập trình như mình thấm cực kỳ. 3 giải Oscar, doanh thu 225 triệu USD=))"
         }
       ],
       "sports": {
         "title": "Thể thao & Năng động",
-        "sub": "Chạy · Bơi · Bóng đá",
+        "sub": "Chạy bộ · Bơi lội · Bóng đá",
+        "intro": "Ngoài thời gian học tập và làm việc với công nghệ, thể thao là cách Anh Thông xả năng lượng, rèn luyện sự dẻo dai và giữ tinh thần luôn tích cực.",
         "photos": [
-          { "src": "/media/sports/1.jpg", "title": "Chạy bộ", "caption": "Những bước chạy dài trên đường đua — bền bỉ và quyết tâm về đích." },
-          { "src": "/media/sports/2.jpg", "title": "Thi đấu", "caption": "Khoảnh khắc tập luyện nghiêm túc, chuẩn bị cho từng trận đấu." },
-          { "src": "/media/sports/3.jpg", "title": "Bóng đá", "caption": "Trên sân cỏ cùng đồng đội — tinh thần thi đấu hết mình." },
-          { "src": "/media/sports/4.jpg", "title": "Bơi lội", "caption": "Dưới làn nước xanh — sự dẻo dai và kiểm soát từng nhịp thở." },
-          { "src": "/media/sports/5.jpg", "title": "Năng động", "caption": "Thể thao là lối thoát năng lượng — vui vẻ, năng nổ, không bỏ cuộc." }
+          { "src": "/media/sports/1.jpg", "title": "Chạy bộ", "tag": "Sức bền", "caption": "Những bước chạy bứt phá giới hạn bản thân." },
+          { "src": "/media/sports/2.jpg", "title": "Thi đấu", "tag": "Kỷ luật", "caption": "Tập trung nghiêm túc trong từng khoảnh khắc." },
+          { "src": "/media/sports/3.jpg", "title": "Bóng đá", "tag": "Đồng đội", "caption": "Nhiệt huyết trên sân cỏ cùng bạn bè." },
+          { "src": "/media/sports/4.jpg", "title": "Bơi lội", "tag": "Tập trung", "caption": "Thư giãn và làm chủ nhịp thở dưới nước." },
+          { "src": "/media/sports/5.jpg", "title": "Năng động", "tag": "Năng lượng", "caption": "Lối sống tích cực, luôn tràn đầy sức trẻ." }
         ]
       }
     },
@@ -358,32 +486,38 @@
       ],
       "projects": [
         {
-          "title": "Ứng dụng hỗ trợ học sinh",
-          "desc": "Hỗ trợ học tập và đời sống học đường — đạt Giải Nhất KHKT.",
+          "title": "Ứng dụng hỗ trợ học sinh(T-learn)",
+          "desc": "Hỗ trợ học tập và đời sống học đường.",
           "tag": "Giáo dục",
-          "icon": "🎓"
+          "icon": "🎓",
+          "url": "https://github.com/thong-2ker9/T-learn",
+          "image": { "src": "/images/projects/t-learn.png", "alt": "Logo ứng dụng T-learn" }
         },
         {
           "title": "Photobooth",
-          "desc": "Dự án chụp ảnh vui nhộn, kỷ niệm khoảnh khắc.",
+          "desc": "Chụp ảnh,kỷ niệm,khoảnh khắc(làm giống ở ngoài).",
           "tag": "Sáng tạo",
-          "icon": "📸"
+          "icon": "📸",
+          "url": "https://github.com/thong-2ker9/photobooth",
+          "image": { "src": "/images/projects/photobooth.png", "alt": "Giao diện Photo Booth Nhà V" }
         },
         {
           "title": "Bluetooth Chat",
           "desc": "Nhắn tin / giao tiếp qua Bluetooth không cần wifi, tương tự bitchat.",
           "tag": "Truyền thông",
-          "icon": "📡"
+          "icon": "📡",
+          "url": "https://github.com/thong-2ker9/bluetooth-chat"
         },
         {
-          "title": "AI Call API",
-          "desc": "Những thử nghiệm tích hợp AI API vào sản phẩm.",
-          "tag": "AI",
-          "icon": "🤖"
+          "title": "web portfolio",
+          "desc": "Hỗ trợ tạo readmi.md proflie cá nhân trên github.",
+          "tag": "portfolio",
+          "icon": "🤖",
+          "url": "https://github.com/thong-2ker9/thong-2ker9"
         },
         {
-          "title": "Ứng dụng Tâm lý & Đời sống",
-          "desc": "Ứng dụng liên quan đến tâm lý và đời sống.",
+          "title": "Applications of psychology in daily life",
+          "desc": "1 con app này sp tâm lý cho người bị tâm lý và trò chuyện(nma đang test:)) ).",
           "tag": "Tâm lý",
           "icon": "💡"
         },
@@ -400,12 +534,6 @@
         "handle": "thong-2ker9"
       },
       "images": [
-        {
-          "src": "/images/photo-11.jpg",
-          "role": "bento-feature",
-          "alt": "Một khoảnh khắc lập trình",
-          "caption": "Mỗi dự án phản ánh một giai đoạn tò mò"
-        }
       ]
     },
 
@@ -456,10 +584,10 @@
           "links": []
         },
         {
-          "name": "Anh coder Ấn Độ",
+          "name": "Mấy Anh coder Ấn Độ",
           "role": "Nguồn cảm hứng tự học",
           "icon": "🇮🇳",
-          "bio": "Những lập trình viên Ấn Độ trên YouTube dạy code miễn phí — nguồn cảm hứng tự học mỗi ngày.",
+          "bio": "Những lập trình viên Ấn Độ trên YouTube dạy code miễn phí,là nguồn cảm hứng tự học code,thề mấy cha ấn độ này giỏi vaizz nhoo.",
           "links": []
         }
       ],
@@ -486,7 +614,7 @@
       "navLabel": "Bước ngoặt",
       "layout": "hero-quote",
       "primaryTitle": "Bước ngoặt & Động lực",
-      "secondaryTitle": "Định nghĩa lại thành công & Trách nhiệm gia đình",
+      "secondaryTitle": "Định nghĩa lại ước mơ & Trách nhiệm với bản thân",
       "body": [
         "Có một giai đoạn khiến cách Anh Thông nhìn về tương lai thay đổi: khi gia đình gặp khó khăn. Những khó khăn đó khiến anh bắt đầu suy nghĩ nhiều hơn về những điều trước đây có thể từng được xem là rất xa: Mình là ai? Mình muốn trở thành người như thế nào? Mình có thể làm được gì cho gia đình? Sau này mình muốn có một cuộc sống như thế nào?",
         "Thành công hay thất bại đối với Anh Thông không chỉ đơn giản là điểm số hay một chức danh nghề nghiệp mà còn là sự trải nghiệm và học hỏi kinh nghiệm từ chính những sai lầm. Với mong muốn một ngày nào đó có đủ năng lực và sự độc lập để lo được cho bản thân và gia đình, có khả năng tự quyết định cuộc sống của mình, được đi nhiều nơi, nhìn thấy nhiều thứ và không phải sống hoàn toàn theo những khuôn mẫu mà xã hội đặt ra."

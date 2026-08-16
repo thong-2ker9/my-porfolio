@@ -1,17 +1,58 @@
-import { Mail, ExternalLink, Sparkles } from 'lucide-react'
+import { ExternalLink, Sparkles } from 'lucide-react'
 import { SlideSection, Body } from './helpers'
+import SlideDoodles from './SlideDoodles'
+import { useLanguage } from '../../i18n/LanguageProvider'
 
-const ICONS = {
-  Gmail: <Mail size={18} />,
-  LinkedIn: 'in',
-  Facebook: 'f',
-  Instagram: '◎',
-  GitHub: '⌥',
-  Locket: '◆',
-  Discord: '◈',
+// Real app-logos (Simple Icons, brand colors) for every contact channel.
+const AVATARS = {
+  Gmail: '/images/social/gmail.svg',
+  LinkedIn: '/images/social/linkedin.svg',
+  Facebook: '/images/social/facebook.svg',
+  Instagram: '/images/social/instagram.svg',
+  GitHub: '/images/social/github.svg',
+  Locket: '/images/social/locket.svg',
+  Discord: '/images/social/discord.svg',
+}
+
+function Avatar({ c }) {
+  return (
+    <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-card bg-white/10">
+      <img
+        src={AVATARS[c.channel]}
+        alt={`${c.channel} logo`}
+        loading="lazy"
+        className="h-6 w-6 object-contain"
+      />
+    </span>
+  )
 }
 
 function ContactCard({ c }) {
+  // Gmail is display-only — just the address, no link to click.
+  if (c.channel === 'Gmail') {
+    return (
+      <div
+        data-reveal
+        className={`panel flex items-center justify-between gap-4 p-5 ${
+          c.highlight ? '!border-accent/30' : 'opacity-80'
+        }`}
+      >
+        <div className="flex min-w-0 items-center gap-4">
+          <Avatar c={c} />
+          <div className="min-w-0">
+            <p className="flex items-center gap-2 font-display text-sm font-semibold text-white">
+              {c.channel}
+              {c.highlight && (
+                <span className="tag !px-2 !py-0.5 !text-[10px]">{c.note}</span>
+              )}
+            </p>
+            <p className="truncate text-xs text-body/60">{c.value}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <a
       href={c.href}
@@ -23,15 +64,7 @@ function ContactCard({ c }) {
       }`}
     >
       <div className="flex min-w-0 items-center gap-4">
-        <span
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-card font-display text-sm font-bold ${
-            c.highlight
-              ? 'bg-accent text-white'
-              : 'border border-white/15 text-body'
-          }`}
-        >
-          {ICONS[c.channel] ?? '·'}
-        </span>
+        <Avatar c={c} />
         <div className="min-w-0">
           <p className="flex items-center gap-2 font-display text-sm font-semibold text-white">
             {c.channel}
@@ -51,8 +84,12 @@ function ContactCard({ c }) {
 }
 
 export default function HeroContactSlide({ slide, contact }) {
+  const { t } = useLanguage()
   return (
-    <SlideSection id={slide.id} num={slide.num} className="flex items-center py-28">
+    <SlideSection id={slide.id} num={slide.num} className="flex items-center py-20">
+
+      {/* faint contact stickers in the empty corners */}
+      <SlideDoodles theme={slide.id} />
 
       {/* giant CONNECT backdrop */}
       <span
@@ -75,7 +112,7 @@ export default function HeroContactSlide({ slide, contact }) {
           <div data-reveal className="flex items-center gap-3 rounded-card border border-white/10 bg-surface/50 px-4 py-3">
             <Sparkles size={16} className="text-accent" />
             <p className="text-xs text-body/70">
-              Gmail & LinkedIn được tô đậm — kênh kết nối chính của Anh Thông.
+              {t('Gmail & LinkedIn được tô đậm — kênh kết nối chính của Anh Thông.')}
             </p>
           </div>
         </div>

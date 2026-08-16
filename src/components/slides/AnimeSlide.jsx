@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { SlideSection, SlideHeader } from './helpers'
+import GradualBlur from '../GradualBlur'
+import SlideDoodles from './SlideDoodles'
+import { useLanguage } from '../../i18n/LanguageProvider'
 
 /**
  * Fullscreen anime highlight player.
@@ -8,6 +11,7 @@ import { SlideSection, SlideHeader } from './helpers'
  * pause when scrolled away. Left/right buttons cycle through the anime entries.
  */
 export default function AnimeSlide({ slide }) {
+  const { t } = useLanguage()
   const items = slide.anime || []
   const [index, setIndex] = useState(0)
   const videoRef = useRef(null)
@@ -58,10 +62,14 @@ export default function AnimeSlide({ slide }) {
           preload="auto"
           className="h-full w-full object-cover"
         />
-        {/* legibility scrims */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/50" />
+        {/* legibility scrims — bottom edge kept lighter (/70) so the gradual
+            blur below actually shows the video dissolving as you scroll. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
+
+      {/* faint cinema stickers over the video's dark edges */}
+      <SlideDoodles theme={slide.id} />
 
       {/* Header */}
       <div className="absolute inset-x-0 top-24 z-10 px-6 sm:px-10 lg:top-28">
@@ -72,8 +80,21 @@ export default function AnimeSlide({ slide }) {
         />
       </div>
 
+      {/* Gradual-blur edge (React Bits) — a static scrim like the gradients
+          below: the bottom of the frame blurs out, so when you scroll toward
+          the movies slide the video looks like it's dissolving. Taller and
+          stronger than before so the dissolve is clearly visible. */}
+      <GradualBlur
+        position="bottom"
+        height="10rem"
+        strength={4}
+        divCount={6}
+        curve="bezier"
+        zIndex={10}
+      />
+
       {/* Logo + title + intro below the video */}
-      <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-16 sm:px-10 sm:pb-20">
+      <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-14 sm:px-10 sm:pb-16">
         <div data-reveal className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
             <div className="flex items-end gap-3">
@@ -88,7 +109,7 @@ export default function AnimeSlide({ slide }) {
                 {item.title}
               </h3>
             </div>
-            <span className="mt-3 inline-block rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-display text-[10px] font-medium uppercase tracking-[0.18em] text-cyber">
+            <span className="mt-3 inline-block rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-display text-[11px] font-medium uppercase tracking-[0.16em] text-cyber">
               {item.tag}
             </span>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
@@ -102,7 +123,7 @@ export default function AnimeSlide({ slide }) {
               <button
                 key={it.video}
                 onClick={() => setIndex(i)}
-                aria-label={`Xem ${it.title}`}
+                aria-label={`${t('Xem')} ${it.title}`}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   i === index ? 'w-7 bg-accent' : 'w-1.5 bg-white/40 hover:bg-white/70'
                 }`}
@@ -115,14 +136,14 @@ export default function AnimeSlide({ slide }) {
       {/* Prev / Next — both sides */}
       <button
         onClick={prev}
-        aria-label="Xem anime trước"
+        aria-label={t('Xem anime trước')}
         className="absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition-all duration-300 hover:border-accent hover:bg-accent sm:left-8"
       >
         <ChevronLeft size={22} />
       </button>
       <button
         onClick={next}
-        aria-label="Xem anime tiếp theo"
+        aria-label={t('Xem anime tiếp theo')}
         className="absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition-all duration-300 hover:border-accent hover:bg-accent sm:right-8"
       >
         <ChevronRight size={22} />

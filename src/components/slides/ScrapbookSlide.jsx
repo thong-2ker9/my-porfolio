@@ -1,5 +1,6 @@
 import { BarChart3, Ruler, Pencil, Search, Calculator, Trophy } from 'lucide-react'
 import { SlideSection } from './helpers'
+import SlideDoodles from './SlideDoodles'
 
 /* Tailwind literal classes so arbitrary rotate values are generated */
 const ROT = {
@@ -61,6 +62,8 @@ export default function ScrapbookSlide({ slide }) {
 
   return (
     <SlideSection id={slide.id} num={slide.num} className="bg-space">
+      {/* faint study stickers in the empty margins (already has real stickers) */}
+      <SlideDoodles theme={slide.id} />
       {/* textured board: subtle gray-blue wash + dot grid */}
       <div
         aria-hidden="true"
@@ -71,9 +74,9 @@ export default function ScrapbookSlide({ slide }) {
         className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:28px_28px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-28 sm:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-24 sm:px-10">
         {/* ══════════ KHỐI A — Khoa học Kỹ thuật (2 cột: text | ảnh) ══════════ */}
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-x-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-x-16">
           {/* Cột trái — text */}
           <div data-reveal className="relative">
             {/* tag 05 + sticker-2 (kính bảo hộ) */}
@@ -84,8 +87,8 @@ export default function ScrapbookSlide({ slide }) {
                 aria-hidden="true"
                 className="pointer-events-none w-10 -rotate-6"
               />
-              <p className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-[#13243d] px-3.5 py-1.5 font-display text-[11px] font-semibold uppercase tracking-[0.22em] text-cyber sm:text-xs">
-                <span className="rounded-full bg-accent/80 px-1.5 py-0.5 text-[9px] font-bold text-white">
+              <p className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/30 bg-[#13243d] px-3.5 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.22em] text-cyber sm:text-xs">
+                <span className="rounded-full bg-accent/80 px-1.5 py-0.5 text-[10px] font-bold text-white">
                   {slide.num}
                 </span>
                 <span className="text-white/40">—</span>
@@ -154,7 +157,7 @@ export default function ScrapbookSlide({ slide }) {
         </div>
 
         {/* ══════════ KHỐI B — Á quân + Về Toán học (2 cột: 45% | 55%) ══════════ */}
-        <div className="mt-24 grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-x-16">
+        <div className="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-x-16">
           {/* Cột trái — badge Á quân + card kết quả + polaroid CLB Toán */}
           <div data-reveal className="relative">
             {/* badge tròn Á quân (tím, ~96px) + chữ viết tay */}
@@ -171,7 +174,7 @@ export default function ScrapbookSlide({ slide }) {
             </div>
 
             {/* 2 polaroid: card CLB Toán (math-1) + poster kết quả Rung Chuông Vàng (math-2) */}
-            <div className="relative z-10 mt-8 grid max-w-xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="relative z-10 mt-6 grid max-w-xl grid-cols-1 gap-6 sm:grid-cols-2">
               <div className="rotate-[-2deg] bg-white p-2.5 pb-4 shadow-[0_18px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out hover:rotate-0 hover:scale-[1.03]">
                 <div className="overflow-hidden">
                   <img src={aw.club.photo} alt="" loading="lazy" className="h-48 w-full object-cover" />

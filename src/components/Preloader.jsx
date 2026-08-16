@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import gsap from 'gsap'
+import { useLanguage } from '../i18n/LanguageProvider'
 
 /**
  * Multilingual Preloader Intro
@@ -20,16 +21,18 @@ const EXIT_MS = 800
  *  would otherwise animate the jump (visibly scrolling through mid-page
  *  slides before reaching slide 1). */
 const scrollTopInstant = () => {
-  const docEl = document.documentElement
-  const prev = docEl.style.scrollBehavior
-  docEl.style.scrollBehavior = 'auto'
-  window.scrollTo(0, 0)
-  docEl.style.scrollBehavior = prev
+  if (typeof window === 'undefined') return
+  document.documentElement.scrollTop = 0
+  document.body.scrollTop = 0
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
 }
 
-export default function Preloader({ onComplete }) {
+export default function Preloader({ onStartReveal, onComplete }) {
+  const { t } = useLanguage()
   const overlayRef = useRef(null)
   const innerRef = useRef(null)
+  const onStartRevealRef = useRef(onStartReveal)
+  onStartRevealRef.current = onStartReveal
   const onCompleteRef = useRef(onComplete)
   onCompleteRef.current = onComplete
   const [idx, setIdx] = useState(0)
@@ -46,15 +49,16 @@ export default function Preloader({ onComplete }) {
   useEffect(() => {
     const root = document.documentElement
     const prevOverflow = root.style.overflow
-    const prevRestore = history.scrollRestoration
-    // Mid-page reloads otherwise restore the old scroll position, so the intro
-    // would play over slide 8 and the earlier reveals would already be passed.
+    const prevScrollBehavior = root.style.scrollBehavior
+
     history.scrollRestoration = 'manual'
+    root.style.scrollBehavior = 'auto'
     scrollTopInstant()
     root.style.overflow = 'hidden'
+
     return () => {
       root.style.overflow = prevOverflow
-      history.scrollRestoration = prevRestore
+      root.style.scrollBehavior = prevScrollBehavior
     }
   }, [])
 
@@ -103,14 +107,24 @@ export default function Preloader({ onComplete }) {
     })
 
     if (reducedMotion) {
-      tl.to(overlay, { autoAlpha: 0, duration: 0.45, ease: 'power2.out' })
+      tl.to(overlay, {
+        autoAlpha: 0,
+        duration: 0.45,
+        ease: 'power2.out',
+        onStart: () => onStartRevealRef.current?.(),
+      })
     } else {
       // Content dims a touch while the curtain rises.
-      tl.to(inner, { opacity: 0, y: -24, duration: 0.4, ease: 'power2.in' })
+      tl.to(inner, { opacity: 0, y: -24, duration: 0.35, ease: 'power2.in' })
         .to(
           overlay,
-          { yPercent: -100, duration: EXIT_MS / 1000, ease: 'power4.inOut' },
-          0.15,
+          {
+            yPercent: -100,
+            duration: EXIT_MS / 1000,
+            ease: 'power4.inOut',
+            onStart: () => onStartRevealRef.current?.(), // Slide 1 & Header animation start simultaneously as curtain slides up!
+          },
+          0.12,
         )
     }
     return () => tl.kill()
@@ -125,7 +139,7 @@ export default function Preloader({ onComplete }) {
       <div ref={innerRef} className="flex flex-col items-center gap-10 px-6">
         {/* brand mark */}
         <p className="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-gray-900/50">
-          Anh Thông · Portfolio
+          Anh Thông · {t('Portfolio')}
         </p>
 
         {/* line · greeting · line */}

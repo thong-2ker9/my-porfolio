@@ -1,9 +1,17 @@
+import { forwardRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 
-/** Wraps every slide so GSAP can target it for scrollspy + reveals. */
-export function SlideSection({ id, num, children, className = '' }) {
+/** Wraps every slide so GSAP can target it for scrollspy + reveals.
+ *  Forwarded ref so slides can scope their GSAP contexts to the section
+ *  (e.g. HeroSlide's intro timeline) — without it the ref is silently
+ *  dropped in React 18 and gsap.context gets a null scope. */
+export const SlideSection = forwardRef(function SlideSection(
+  { id, num, children, className = '' },
+  ref,
+) {
   return (
     <section
+      ref={ref}
       id={`slide-${id}`}
       data-slide={id}
       data-num={num}
@@ -12,7 +20,7 @@ export function SlideSection({ id, num, children, className = '' }) {
       {children}
     </section>
   )
-}
+})
 
 /** Giant editorial title block: label, primary title, secondary title. */
 export function SlideHeader({ num, primaryTitle, secondaryTitle, align = 'left' }) {
@@ -24,7 +32,10 @@ export function SlideHeader({ num, primaryTitle, secondaryTitle, align = 'left' 
         <span className="text-accent">{num}</span>
         <span className="mx-1.5 text-white/25">—</span> {secondaryTitle}
       </span>
-      <h2 className="giant-text text-balance text-4xl sm:text-5xl lg:text-6xl">
+      {/* text-6xl only from xl up — on small laptops (1024–1280) the title
+          stays at 48px so long Vietnamese headlines don't swallow the
+          viewport. leading-none (from .giant-text) keeps two-line titles tight. */}
+      <h2 className="giant-text text-balance text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
         {primaryTitle}
       </h2>
     </div>
