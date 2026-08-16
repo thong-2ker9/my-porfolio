@@ -27,21 +27,38 @@ export default function AnimeSlide({ slide }) {
     const section = sectionRef.current
     if (!video || !section || typeof IntersectionObserver === 'undefined') return
 
+    let visible = false
+    const tryPlay = () => {
+      // only start once enough data is buffered, and never fight the user's
+      // own pausing — otherwise a slow network leaves the slide stuck black
+      if (visible && !document.hidden && video.paused && video.readyState >= 2) {
+        video.play().catch(() => {})
+      }
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
+        visible = entry.isIntersecting
         // pause when the tab is hidden too — the observer can't tell
         if (document.hidden) {
           video.pause()
           return
         }
-        if (entry.isIntersecting) video.play().catch(() => {})
+        if (visible) tryPlay()
         else video.pause()
       },
       { threshold: 0.25 },
     )
     io.observe(section)
-    // only play once the section is actually on screen (observer fires immediately)
-    return () => io.disconnect()
+    // play() called before enough data is buffered rejects and is never
+    // retried on its own — retry once the data actually arrives
+    video.addEventListener('loadeddata', tryPlay)
+    video.addEventListener('canplay', tryPlay)
+    return () => {
+      io.disconnect()
+      video.removeEventListener('loadeddata', tryPlay)
+      video.removeEventListener('canplay', tryPlay)
+    }
   }, [index])
 
   return (
