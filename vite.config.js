@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // GitHub Pages serves this project at https://thong-2ker9.github.io/my-porfolio/
-// so every asset must live under that base path.
-const BASE = '/my-porfolio/'
+// so every asset must live under that base path. Cloudflare Pages (which sets
+// CF_PAGES=1 during its builds) serves the same repo at the root instead, so
+// the base flips to '/' there automatically.
+const BASE = process.env.CF_PAGES ? '/' : '/my-porfolio/'
 
 // The app hardcodes absolute asset paths like '/images/...', '/media/...',
 // '/assets/...' and '/music/...' in source. Vite's `base` option only rewrites
